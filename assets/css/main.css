@@ -341,13 +341,20 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .card:hover, .card:focus-within { box-shadow: var(--shadow-md); border-color: var(--color-blue); }
 
 .card__media {
+  position: relative;
+  overflow: hidden;
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 10;
   background: var(--color-sky);
   color: var(--color-blue-text);
 }
-.card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Crop focus for tall photographs shown in landscape frames */
+.pos-lake { object-position: 50% 62%; }
+.pos-vortex { object-position: 50% 58%; }
+.pos-low { object-position: 50% 75%; }
+.pos-town { object-position: 50% 68%; }
 
 .card__body { display: flex; flex-direction: column; flex: 1; gap: var(--space-2); padding: var(--space-5); }
 .card__title { margin: 0; font-size: var(--font-size-lg); }
@@ -500,6 +507,34 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .form-privacy { margin: var(--space-4) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 .form-privacy--first { margin: 0 0 var(--space-4); }
 .field label .hint { font-weight: 400; }
+
+/* Gallery: horizontally scrollable photos (swipe, trackpad, arrow keys or the buttons) ----------- */
+.gallery { position: relative; width: 100%; height: 100%; }
+.gallery__track {
+  display: flex; height: 100%; margin: 0; padding: 0; list-style: none;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth;
+}
+.gallery__track::-webkit-scrollbar { display: none; }
+.gallery__track li { position: relative; flex: 0 0 100%; scroll-snap-align: start; }
+.gallery__track img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery__track:focus-visible { outline: 3px solid var(--color-focus); outline-offset: -3px; }
+.gallery__btn {
+  position: absolute; top: 50%; z-index: 2; display: grid; place-items: center;
+  width: var(--tap-target); height: var(--tap-target); margin-top: calc(var(--tap-target) / -2); padding: 0;
+  color: var(--color-navy); background: rgb(255 255 255 / 92%); border: 0; border-radius: 50%; cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+.gallery__btn:hover { background: var(--color-white); }
+.gallery__btn[disabled] { opacity: 0; pointer-events: none; }
+.gallery__btn--prev { left: var(--space-2); }
+.gallery__btn--next { right: var(--space-2); }
+.gallery__btn svg { width: 1.25rem; height: 1.25rem; }
+.gallery__count {
+  position: absolute; left: var(--space-2); bottom: var(--space-2); z-index: 2; padding: 2px var(--space-2);
+  font-size: var(--font-size-sm); font-weight: 700; color: var(--color-white); background: rgb(29 58 87 / 80%); border-radius: var(--radius-sm);
+}
+@media (prefers-reduced-motion: reduce) { .gallery__track { scroll-behavior: auto; } }
 
 /* 12. Reduced motion ---------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {

@@ -24,13 +24,13 @@
 }
 
 .visa-hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
-.visa-hero__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.visa-hero__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; display: block; }
 /* Dark overlay keeps the white headline readable on any photograph */
 .visa-hero__bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgb(29 58 87 / 60%), rgb(29 58 87 / 50%) 60%, rgb(29 58 87 / 60%));
+  background: linear-gradient(to bottom, rgb(29 58 87 / 66%), rgb(29 58 87 / 56%) 60%, rgb(29 58 87 / 66%));
 }
 
 .visa-hero__inner {

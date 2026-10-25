@@ -7,10 +7,11 @@
   <meta name="description" content="Choose your destination and enquire about visa assistance with FLYBOO.COM.">
   <meta name="theme-color" content="#ffffff">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20261025c">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261025c">
-  <link rel="stylesheet" href="assets/css/visa.css?v=20261025c">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261025n">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261025n">
+  <link rel="stylesheet" href="assets/css/visa.css?v=20261025n">
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
   <script src="assets/js/visa-data.js" defer></script>
   <script src="assets/js/visa.js" defer></script>
 </head>
@@ -45,9 +46,7 @@
     <!-- 1. Hero + country search -->
     <section class="visa-hero" aria-labelledby="visa-title">
       <div class="visa-hero__bg">
-        <!-- PLACEHOLDER ARTWORK: replace with a licensed wide-format travel photograph
-             (about 2000×1125, JPG/WebP, under ~250 KB). Keep width/height to avoid layout shift. -->
-        <img src="assets/img/visa/hero-placeholder.svg" width="1600" height="900" alt="" fetchpriority="high" decoding="async">
+        <img src="assets/img/visa/hero-2000.jpg" srcset="assets/img/visa/hero-1000.jpg 1000w, assets/img/visa/hero-2000.jpg 2000w" sizes="100vw" width="2000" height="1333" alt="" fetchpriority="high" decoding="async">
       </div>
       <div class="container">
         <div class="visa-hero__inner">
@@ -99,7 +98,7 @@
         <ul class="dest-row" aria-label="Popular visa destinations">
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/visa/card-uae.svg" width="800" height="600" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img class="pos-lake" src="assets/img/destinations/uae-900.jpg" width="675" height="900" alt="Aerial view from a Dubai skyscraper over the turquoise Dubai Fountain lake and downtown towers" loading="lazy" decoding="async"></div>
               <div class="card__body">
                 <h3 class="card__title">United Arab Emirates</h3>
                 <p class="card__text">Modern cities, desert escapes and beaches</p>
@@ -110,7 +109,7 @@
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/visa/card-singapore.svg" width="800" height="600" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img class="pos-vortex" src="assets/img/destinations/singapore-900.jpg" width="730" height="900" alt="Indoor waterfall beneath a glass dome, surrounded by tropical gardens in Singapore" loading="lazy" decoding="async"></div>
               <div class="card__body">
                 <h3 class="card__title">Singapore</h3>
                 <p class="card__text">A compact, modern city-state</p>
@@ -121,7 +120,12 @@
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/visa/card-thailand.svg" width="800" height="600" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__media"><div class="gallery" role="group" aria-roledescription="carousel" aria-label="Thailand photos">
+                <ul class="gallery__track" tabindex="0" aria-label="Thailand photos, scroll sideways to see more">
+                  <li><img src="assets/img/destinations/thailand-boat-900.jpg" width="900" height="600" alt="Longtail boat on a turquoise lake between misty limestone cliffs in Thailand" loading="lazy" decoding="async"></li>
+                  <li><img src="assets/img/destinations/thailand-900.jpg" width="900" height="600" alt="Ornate golden Thai temple and a tiered white pagoda under a blue sky" loading="lazy" decoding="async"></li>
+                </ul>
+              </div></div>
               <div class="card__body">
                 <h3 class="card__title">Thailand</h3>
                 <p class="card__text">Beaches, temples and street food</p>
@@ -132,7 +136,7 @@
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/visa/card-malaysia.svg" width="800" height="600" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img src="assets/img/destinations/malaysia-900.jpg" width="900" height="605" alt="Petronas Twin Towers and the Kuala Lumpur skyline lit up at dusk" loading="lazy" decoding="async"></div>
               <div class="card__body">
                 <h3 class="card__title">Malaysia</h3>
                 <p class="card__text">Rainforests, islands and vibrant cities</p>
@@ -143,7 +147,7 @@
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/visa/card-uk.svg" width="800" height="600" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img class="pos-low" src="assets/img/destinations/uk-900.jpg" width="900" height="600" alt="Red double-decker bus on Westminster Bridge with the Houses of Parliament and Big Ben behind" loading="lazy" decoding="async"></div>
               <div class="card__body">
                 <h3 class="card__title">United Kingdom</h3>
                 <p class="card__text">Historic cities and rolling countryside</p>
@@ -154,7 +158,7 @@
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/visa/card-schengen.svg" width="800" height="600" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img class="pos-town" src="assets/img/destinations/schengen-900.jpg" width="720" height="900" alt="Terracotta rooftops and a church bell tower beside the sea in a coastal European town" loading="lazy" decoding="async"></div>
               <div class="card__body">
                 <h3 class="card__title">Schengen Area</h3>
                 <p class="card__text">Multi-country travel across Europe</p>
