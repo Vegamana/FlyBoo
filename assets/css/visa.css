@@ -1,0 +1,361 @@
+/* ==========================================================================
+   FLYBOO.COM — Travel Visa page
+   Loaded after main.css. Reuses its buttons, cards, tiles, form fields,
+   section headings and panels; this file only adds what is specific to the
+   visa page. All colours and spacing come from tokens.css.
+   Sections: 1 Hero + country search · 2 Trust banner · 3 Destination row ·
+   4 Process steps · 5 Benefit & category grids · 6 Enquiry · 7 FAQ ·
+   8 Closing CTA
+   ========================================================================== */
+
+/* 1. Hero + country search ------------------------------------------------ */
+.visa-hero {
+  position: relative;
+  padding-block: var(--space-8) calc(var(--space-8) + 2.25rem);
+  color: var(--color-white);
+  background: var(--color-blue-text); /* fallback while the image loads */
+}
+@media (min-width: 48em) {
+  .visa-hero { padding-block: var(--space-9) calc(var(--space-9) + 2.25rem); }
+}
+@media (min-width: 64em) {
+  .visa-hero { min-height: 34rem; display: flex; align-items: center; }
+  .visa-hero > .container { width: min(calc(100% - 2 * var(--gutter)), var(--container-max)); }
+}
+
+.visa-hero__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.visa-hero__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Dark overlay keeps the white headline readable on any photograph */
+.visa-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgb(29 58 87 / 60%), rgb(29 58 87 / 50%) 60%, rgb(29 58 87 / 60%));
+}
+
+.visa-hero__inner {
+  position: relative;
+  z-index: 3; /* above the trust banner so the suggestion list is never hidden behind it */
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.visa-hero h1 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  color: var(--color-white);
+  text-shadow: 0 1px 12px rgb(29 58 87 / 45%);
+}
+.visa-hero__lede {
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-lg);
+  color: var(--color-white);
+  text-shadow: 0 1px 8px rgb(29 58 87 / 45%);
+}
+
+.country-search { position: relative; text-align: left; }
+
+.country-search__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  background: var(--color-white);
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgb(29 58 87 / 22%);
+}
+.country-search__bar:focus-within { outline: 3px solid var(--color-white); outline-offset: 3px; }
+
+.country-search__icon { flex: none; width: 1.5rem; height: 1.5rem; color: var(--color-blue-text); }
+
+.country-search__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--space-3) var(--space-1);
+  font: inherit;
+  font-size: var(--font-size-md);
+  color: var(--color-navy);
+  background: transparent;
+  border: 0;
+  outline: 0; /* focus is shown on the whole bar (see :focus-within above) */
+}
+.country-search__input::placeholder { color: var(--color-text-secondary); opacity: 1; }
+
+.country-search__go {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  color: var(--color-on-orange);
+  background: var(--color-orange);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.country-search__go:hover { background: var(--color-orange-hover); }
+.country-search__go:focus-visible { outline: 3px solid var(--color-navy); outline-offset: 3px; }
+.country-search__go svg { width: 1.5rem; height: 1.5rem; }
+
+.country-search__list {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  z-index: 20;
+  max-height: 18rem;
+  margin: 0;
+  padding: var(--space-2);
+  overflow-y: auto;
+  list-style: none;
+  color: var(--color-navy);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 28px rgb(29 58 87 / 22%);
+}
+.country-search__list[hidden] { display: none; }
+
+.country-search__option {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.country-search__option:hover { background: var(--color-grey-soft); }
+.country-search__option[aria-selected="true"] {
+  background: var(--color-sky);
+  box-shadow: inset 4px 0 0 var(--color-orange);
+}
+.country-search__option-name { font-weight: 600; }
+.country-search__option-hint { flex: none; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.country-search__option--other .country-search__option-name { color: var(--color-blue-text); }
+
+.country-search__help {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-sm);
+  text-align: center;
+  color: var(--color-white);
+  text-shadow: 0 1px 8px rgb(29 58 87 / 55%);
+}
+
+/* 2. Trust banner (overlaps the hero's bottom edge) -------------------------- */
+.trust-banner { position: relative; z-index: 2; margin-top: -2.25rem; }
+.trust-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  background: var(--color-warm);
+  border: 1px solid #f3d3bd;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+.trust-banner__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-blue-text);
+  background: var(--color-white);
+  border-radius: 50%;
+}
+.trust-banner__icon svg { width: 1.375rem; height: 1.375rem; }
+.trust-banner p { margin: 0; font-weight: 700; color: var(--color-navy); }
+
+/* 3. Popular destinations row -------------------------------------------------- */
+#popular { padding-top: var(--space-8); scroll-margin-top: var(--header-height); }
+
+.dest-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(15rem, 78%);
+  gap: var(--space-4);
+  margin: 0 calc(-1 * var(--gutter));
+  padding: var(--space-1) var(--gutter) var(--space-4);
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: thin;
+}
+.dest-row > li { display: flex; scroll-snap-align: start; }
+
+@media (min-width: 75em) {
+  .dest-row {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow: visible;
+  }
+}
+
+.dest-card { flex: 1; }
+.dest-card .card__media { aspect-ratio: 4 / 3; }
+.dest-card .card__body { padding: var(--space-4); }
+.dest-card .card__title { font-size: var(--font-size-md); }
+.dest-card .card__footer { padding-top: var(--space-3); }
+
+/* The CTA is the card's single link; its ::after stretches over the whole card */
+.dest-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-blue-text);
+  background: var(--color-white);
+  border: 2px solid var(--color-blue-text);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.dest-card__cta::after { content: ""; position: absolute; inset: 0; }
+.dest-card:hover .dest-card__cta,
+.dest-card__cta:hover { color: var(--color-blue-dark); background: var(--color-sky); border-color: var(--color-blue-dark); }
+.dest-card__cta:focus-visible { outline: none; }
+.dest-card__cta:focus-visible::after { outline: 3px solid var(--color-focus); outline-offset: 3px; border-radius: var(--radius-md); }
+.dest-card__cta svg { width: 1rem; height: 1rem; flex: none; }
+
+.section-note { margin: var(--space-4) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+
+/* 4. Process steps ---------------------------------------------------------------- */
+.steps { display: grid; gap: var(--space-5); margin: 0; padding: 0; list-style: none; }
+.step { position: relative; padding-left: 4rem; }
+.step__num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-weight: 800;
+  color: var(--color-blue-text);
+  background: var(--color-white);
+  border: 2px solid var(--color-blue-text);
+  border-radius: 50%;
+}
+.step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: calc(1.375rem - 1px);
+  top: 2.75rem;
+  bottom: calc(-1 * var(--space-5));
+  width: 2px;
+  background: var(--color-blue);
+  opacity: 0.45;
+}
+.step__title { margin-bottom: var(--space-1); font-size: var(--font-size-md); }
+.step__text { margin: 0; color: var(--color-text-secondary); }
+
+@media (min-width: 64em) {
+  .steps { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .step { padding: 4rem 0 0; }
+  .step:not(:last-child)::before {
+    left: 3.25rem;
+    right: calc(-1 * var(--space-5));
+    top: calc(1.375rem - 1px);
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+}
+
+.process-note { max-width: 46rem; margin: var(--space-6) 0 0; }
+
+/* 5. Benefit & category grids ------------------------------------------------------- */
+.visa-tiles { margin: 0; padding: 0; list-style: none; grid-template-columns: 1fr; }
+@media (min-width: 40em) { .visa-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 64em) { .visa-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.visa-tiles--five { grid-template-columns: 1fr; }
+@media (min-width: 40em) { .visa-tiles--five { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 64em) { .visa-tiles--five { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+.details-panel { margin-top: var(--space-6); }
+.details-panel ul { margin: 0 0 var(--space-3); padding-left: 1.25rem; }
+.details-panel li { margin-bottom: var(--space-1); }
+.details-panel__cols { display: grid; gap: var(--space-5); }
+@media (min-width: 48em) { .details-panel__cols { grid-template-columns: 1fr 1fr; } }
+
+/* 6. Enquiry ---------------------------------------------------------------------------- */
+#enquiry { scroll-margin-top: calc(var(--header-height) + var(--space-4)); }
+
+/* 7. FAQ accordion (native <details>: keyboard and screen-reader accessible) ----------- */
+.faq { display: grid; gap: var(--space-3); max-width: 48rem; margin-inline: auto; }
+.faq details { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.faq details[open] { border-color: var(--color-blue); }
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 3.25rem;
+  padding: var(--space-3) var(--space-5);
+  font-weight: 700;
+  color: var(--color-blue-text);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-md);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "";
+  flex: none;
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: -0.25rem;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.faq details[open] summary::after { margin-top: 0.25rem; transform: rotate(-135deg); }
+.faq summary:hover { color: var(--color-blue-dark); background: var(--color-sky); }
+.faq summary:focus-visible { outline: 3px solid var(--color-focus); outline-offset: -3px; }
+.faq__body { padding: 0 var(--space-5) var(--space-4); color: var(--color-text-secondary); }
+.faq__body p:last-child { margin-bottom: 0; }
+
+/* 8. Closing CTA ---------------------------------------------------------------------------- */
+.cta-panel {
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  background: var(--color-sky);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.cta-panel h2 { margin-bottom: var(--space-2); }
+.cta-panel p { max-width: 36rem; margin: 0 auto var(--space-5); color: var(--color-text-secondary); font-size: var(--font-size-md); }
+.cta-panel .btn-group { justify-content: center; }
+
+.cta-panel--mascot { display: grid; gap: var(--space-4); justify-items: center; }
+.cta-panel__mascot { width: 10rem; }
+@media (min-width: 48em) {
+  .cta-panel--mascot { grid-template-columns: 13rem minmax(0, 1fr); gap: var(--space-6); justify-items: stretch; align-items: center; padding-block: var(--space-6); text-align: left; }
+  .cta-panel--mascot .cta-panel__mascot { width: 100%; margin-block: calc(-1 * var(--space-5)); }
+  .cta-panel--mascot p { margin-left: 0; }
+  .cta-panel--mascot .btn-group { justify-content: flex-start; }
+}
+
+.visa-disclaimer { margin: var(--space-5) auto 0; max-width: 48rem; text-align: center; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-row { scroll-behavior: auto; }
+}

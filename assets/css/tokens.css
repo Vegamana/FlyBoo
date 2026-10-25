@@ -1,0 +1,75 @@
+/* ==========================================================================
+   FLYBOO.COM — Design tokens
+   Single source of truth for colour, type, spacing, radius and shadow.
+   Change values here; everything else reads from these variables.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette (initial approximations from the logo) ------------- */
+  --color-orange: #e96123;       /* Tangerine (brand book): primary actions and active states */
+  --color-blue: #4a8ac8;         /* Steel Blue (brand book): fills, borders, icons, decoration */
+  --color-sky: #edf4fb;         /* Pale tint of Steel Blue */          /* Light sky blue: section / hero backgrounds */
+  --color-navy: #1d3a57;         /* Ink: darkened Steel Blue shade for body text (derived, not a new hue) */
+  --color-white: #ffffff;
+  --color-grey-soft: #f4f8fc;    /* Very pale Steel Blue tint: alternate section background */
+  --color-border: #dbe5ef;       /* Border grey: dividers, card borders */
+  --color-text-secondary: #4f6073;   /* Secondary text, 6:1 on white */
+  --color-ivory: #f4f8fc;       /* Alias of the pale tint; brand book has no ivory */
+  --color-warm: #fff4ec;         /* Pale warm tint (orange-leaning) for highlight banners */
+
+  /* ---- Accessibility variants (derived from the brand palette) -----------
+     The raw brand colours do not reach WCAG AA (4.5:1) for small text:
+       white on #E85A24 = 3.6:1    |   #5286C2 on white = 3.8:1
+     So brand orange/blue are kept for fills, borders, icons and large
+     decoration, and these derived tones are used wherever text is involved. */
+  --color-blue-text: #2b6399;      /* Headings, links, nav text. 6.27:1 on white, 5.63:1 on sky */
+  --color-blue-dark: #214e7a;      /* Hover for blue-text elements. 8.62:1 on white */
+  --color-on-orange: #162230;      /* Text on orange buttons. 4.8:1 on #E96123 */
+  --color-orange-hover: #ee7238;   /* Orange button hover (lighter, so text contrast rises) */
+  --color-control-border: #7b8ea3; /* Form control outline. 3.37:1 on white (WCAG 1.4.11) */
+  --color-on-navy-muted: #d6e4f2;  /* Secondary text on navy. 8.58:1 */
+  --color-focus: #1d3a57;          /* Focus ring colour (deep navy) */
+  --color-error: #b42318;          /* Form error text/border (not part of the logo palette) */
+
+  /* ---- Typography ------------------------------------------------------- */
+  /* Brand book: Montserrat for headings, Lato for sub-headings and body. Both self-hosted. */
+  --font-display: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --font-size-2xl: clamp(2.25rem, 1.5rem + 3.4vw, 4rem);
+  --font-size-eyebrow: 0.8125rem;
+  --line-height-body: 1.6;
+  --line-height-heading: 1.2;
+
+  /* ---- Spacing scale (4px base) ----------------------------------------- */
+  --space-1: 0.25rem;   /*  4 */
+  --space-2: 0.5rem;    /*  8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 3rem;      /* 48 */
+  --space-8: 4rem;      /* 64 */
+  --space-9: 6rem;      /* 96 */
+
+  /* ---- Shape & elevation ------------------------------------------------ */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-sm: none;
+  --shadow-md: 0 6px 20px rgb(38 55 70 / 10%);
+
+  /* ---- Layout ----------------------------------------------------------- */
+  --container-max: 75rem;
+  --section-space: var(--space-8);   /* vertical rhythm between sections */
+  --gutter: var(--space-4);
+  --header-height: 4.25rem;
+  --tap-target: 2.75rem;   /* 44px minimum touch target */
+}
+
+@media (min-width: 48em) {
+  :root { --gutter: var(--space-6); }
+}

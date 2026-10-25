@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1200" preserveAspectRatio="xMidYMid slice">
+<!-- PLACEHOLDER ARTWORK: replace with a licensed cinematic coastline photograph (about 2400x1200, JPG/WebP) -->
+<defs>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#142B43"/><stop offset=".45" stop-color="#3b5f87"/><stop offset=".72" stop-color="#e0a27a"/><stop offset="1" stop-color="#f3c99c"/></linearGradient>
+<linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7a97e"/><stop offset=".4" stop-color="#5a7fa6"/><stop offset="1" stop-color="#1c3a58"/></linearGradient>
+<radialGradient id="g" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2d6" stop-opacity=".95"/><stop offset="1" stop-color="#fff2d6" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="2400" height="1200" fill="url(#s)"/>
+<circle cx="1700" cy="700" r="260" fill="url(#g)"/><circle cx="1700" cy="700" r="46" fill="#fff6e2"/>
+<rect y="720" width="2400" height="480" fill="url(#w)"/>
+<path d="M1500 720h360l-60 8h-260z" fill="#fff2d6" opacity=".35"/>
+<path d="M0 760 L260 690 L520 740 L760 700 L980 760 L980 1200 L0 1200Z" fill="#26435f" opacity=".55"/>
+<path d="M1500 1200 L1650 930 L1850 860 L2100 790 L2400 760 L2400 1200Z" fill="#142B43"/>
+<path d="M0 1200 L0 960 L300 900 L620 980 L900 1200Z" fill="#0e2033"/>
+</svg>

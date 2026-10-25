@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b5f8f"/><stop offset="0.6" stop-color="#3f8fbd"/><stop offset="1" stop-color="#f3b58c"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a86a6"/><stop offset="1" stop-color="#12466b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="1120" cy="441" r="378" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd9a8" stop-opacity="0.85"/><stop offset="1" stop-color="#ffd9a8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <circle cx="1120" cy="441" r="63" fill="#ffd9a8" fill-opacity="0.95"/>
+  <path d="M0 504 L0 441 C 240 360, 480 468, 720 414 S 1280 378, 1600 459 L1600 504 Z" fill="#2a6f93" fill-opacity="0.5"/>
+  <rect y="504" width="1600" height="396" fill="url(#sea)"/>
+  <path d="M0 558 C 320 540, 560 576, 880 554 S 1360 540, 1600 562" stroke="#ffffff" stroke-opacity="0.22" stroke-width="4" fill="none"/>
+  <path d="M0 621 C 400 603, 720 639, 1120 612 S 1472 612, 1600 630" stroke="#ffffff" stroke-opacity="0.16" stroke-width="4" fill="none"/>
+  <path d="M0 900 L0 774 C 352 720, 800 810, 1248 747 S 1520 738, 1600 756 L1600 900 Z" fill="#e9d3ad"/>
+</svg>

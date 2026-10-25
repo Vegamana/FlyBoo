@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#245f8f"/><stop offset="0.6" stop-color="#4f97c4"/><stop offset="1" stop-color="#a8dcee"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f8fb0"/><stop offset="1" stop-color="#17557c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="576" cy="318" r="252" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff0cc" stop-opacity="0.8"/><stop offset="1" stop-color="#fff0cc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <circle cx="576" cy="318" r="42" fill="#fff0cc" fill-opacity="0.95"/>
+  <rect x="48" y="314" width="29" height="48" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="79" y="285" width="38" height="77" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="125" y="257" width="32" height="105" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="164" y="232" width="24" height="130" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="193" y="268" width="28" height="94" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="223" y="245" width="27" height="117" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="259" y="311" width="20" height="51" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="282" y="271" width="35" height="91" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="319" y="244" width="36" height="118" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="363" y="317" width="31" height="45" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="399" y="249" width="21" height="113" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect x="427" y="245" width="25" height="117" fill="#1e4f78" fill-opacity="0.85"/>
+  <rect y="360" width="800" height="240" fill="url(#sea)"/>
+  <path d="M0 396 C 160 384, 280 408, 440 393 S 680 384, 800 399" stroke="#ffffff" stroke-opacity="0.22" stroke-width="2" fill="none"/>
+  <path d="M0 438 C 200 426, 360 450, 560 432 S 736 432, 800 444" stroke="#ffffff" stroke-opacity="0.16" stroke-width="3" fill="none"/>
+  <path d="M0 600 L0 516 C 176 480, 400 540, 624 498 S 760 492, 800 504 L800 600 Z" fill="#cfe3d0"/>
+</svg>
