@@ -176,6 +176,11 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 
   .js .nav-toggle { display: none; }
 
+  /* Logo left, menu centred in the header (empty right column balances the logo) */
+  .site-header__inner { display: grid; grid-template-columns: minmax(max-content, 1fr) auto minmax(0, 1fr); gap: 0 var(--space-5); }
+  .brand { grid-column: 1; }
+  .primary-nav, .js .primary-nav { grid-column: 2; justify-self: center; }
+
   .primary-nav,
   .js .primary-nav {
     display: block;
