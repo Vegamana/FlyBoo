@@ -429,32 +429,45 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 /* 10. Footer ----------------------------------------------------------------------- */
 .site-footer {
   margin-top: auto;
-  padding-top: var(--space-7);
-  background: var(--color-blue-text);
+  padding-top: var(--space-8);
+  background: var(--color-navy);
   color: var(--color-white);
 }
 .site-footer :focus-visible { outline-color: var(--color-white); }
 .site-footer h2, .site-footer h3 { color: var(--color-white); }
 
-.footer__grid { display: grid; gap: var(--space-6); padding-bottom: var(--space-7); }
-@media (min-width: 48em) { .footer__grid { grid-template-columns: 1.5fr 1fr; } }
+.footer__grid { display: grid; gap: var(--space-7); padding-bottom: var(--space-8); }
+@media (min-width: 48em) { .footer__grid { grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-9); align-items: start; } }
 
 .footer__logo { display: inline-block; padding: var(--space-3) var(--space-4); background: var(--color-white); border-radius: var(--radius-md); }
 .footer__logo img { display: block; height: 2.5rem; width: auto; max-width: none; }
-.footer__tagline { margin-top: var(--space-3); font-family: "Quinoa", var(--font-display); font-weight: 700; font-size: var(--font-size-lg); color: var(--color-on-navy-muted); }
+.footer__tagline { margin: var(--space-4) 0 var(--space-2); font-family: "Quinoa", var(--font-display); font-weight: 700; font-size: var(--font-size-lg); color: var(--color-white); }
+.footer__about { max-width: 24rem; margin: 0; color: var(--color-on-navy-muted); }
 
-.footer__heading { margin-bottom: var(--space-3); font-size: var(--font-size-md); }
-.footer__links { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); }
+.footer__heading {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-on-navy-muted);
+}
+.footer__links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 var(--space-8); }
+@media (min-width: 30em) { .footer__links { grid-template-columns: repeat(2, minmax(max-content, 1fr)); grid-auto-flow: column; grid-template-rows: repeat(3, auto); } }
 .footer__links a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.25rem;
+  min-height: 2.75rem;
   color: var(--color-white);
-  text-underline-offset: 0.2em;
+  text-decoration: none;
+  background: linear-gradient(var(--color-orange), var(--color-orange)) no-repeat 0 calc(50% + 0.85em) / 0 2px;
+  transition: background-size 0.2s ease;
 }
-.footer__links a:hover { color: var(--color-white); text-decoration-thickness: 2px; }
+.footer__links a:hover, .footer__links a:focus-visible { color: var(--color-white); background-size: 100% 2px; }
+.footer__links a[aria-current="page"] { font-weight: 700; }
 
-.footer__bottom { padding-block: var(--space-4); border-top: 1px solid rgb(255 255 255 / 20%); font-size: var(--font-size-sm); color: var(--color-on-navy-muted); }
+.footer__bottom { padding-block: var(--space-5); border-top: 1px solid rgb(255 255 255 / 16%); font-size: var(--font-size-sm); color: var(--color-on-navy-muted); }
 .footer__bottom p { margin: 0; }
 
 /* 11. Placeholder pages ---------------------------------------------------------------- */
