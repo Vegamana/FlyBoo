@@ -436,6 +436,8 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .pos-right { object-position: 88% 50%; }
 .pos-mid { object-position: 50% 52%; }
 .pos-peak { object-position: 50% 45%; }
+.pos-gate { object-position: 50% 27%; }
+.pos-isle { object-position: 62% 60%; }
 .pos-town { object-position: 50% 68%; }
 
 .card__body { display: flex; flex-direction: column; flex: 1; gap: var(--space-2); padding: var(--space-5); }
@@ -569,6 +571,67 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 
 .page-shell { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
 .page-shell > main { flex: 1 0 auto; }
+
+/* Destination / package cards and itinerary dialogs (Travel Visa and International Tours) ---- */
+.dest-card { flex: 1; }
+.dest-card .card__media { aspect-ratio: 4 / 3; }
+.dest-card .card__body { padding: var(--space-4); }
+.dest-card .card__title { font-size: var(--font-size-md); }
+.dest-card .card__footer { padding-top: var(--space-3); }
+
+/* The CTA is the card's single link; its ::after stretches over the whole card */
+.dest-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-3);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-blue-text);
+  background: var(--color-white);
+  border: 2px solid var(--color-blue-text);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.dest-card__cta::after { content: ""; position: absolute; inset: 0; }
+.dest-card:hover .dest-card__cta,
+.dest-card__cta:hover { color: var(--color-blue-dark); background: var(--color-sky); border-color: var(--color-blue-dark); }
+.dest-card__cta:focus-visible { outline: none; }
+.dest-card__cta:focus-visible::after { outline: 3px solid var(--color-focus); outline-offset: 3px; border-radius: var(--radius-md); }
+.dest-card__cta svg { width: 1rem; height: 1rem; flex: none; }
+
+/* Visa checklist cards and dialog ------------------------------------------------- */
+.vc-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+.vc-grid > li { display: flex; }
+.vc-grid .dest-card { width: 100%; }
+button.dest-card__cta { width: 100%; font: inherit; font-weight: 700; cursor: pointer; }
+
+.vc-dialog { width: min(48rem, calc(100% - 2 * var(--space-4))); max-height: calc(100dvh - 2 * var(--space-4)); padding: 0; color: var(--color-navy); background: var(--color-white); border: 0; border-radius: var(--radius-md); box-shadow: 0 24px 60px rgb(29 58 87 / 35%); }
+.vc-dialog::backdrop { background: rgb(29 58 87 / 60%); }
+html:has(dialog.vc-dialog[open]) { overflow: hidden; }
+.vc-dialog__panel { display: flex; flex-direction: column; max-height: calc(100dvh - 2 * var(--space-4)); }
+.vc-dialog__head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); padding: var(--space-5); border-bottom: 1px solid var(--color-border); }
+.vc-dialog__head h3 { margin: 0; font-size: var(--font-size-xl); color: var(--color-navy); }
+.vc-dialog__head .eyebrow { margin-bottom: var(--space-1); }
+.vc-dialog__close { flex: none; display: grid; place-items: center; width: var(--tap-target); height: var(--tap-target); padding: 0; color: var(--color-navy); background: var(--color-sky); border: 0; border-radius: 50%; cursor: pointer; }
+.vc-dialog__close:hover { background: var(--color-border); }
+.vc-dialog__close svg { width: 1.25rem; height: 1.25rem; }
+.vc-dialog__body { flex: 1 1 auto; overflow-y: auto; padding: var(--space-5); overscroll-behavior: contain; }
+.vc-dialog__intro { margin: 0 0 var(--space-4); color: var(--color-text-secondary); }
+.vc-dialog__facts { display: grid; gap: var(--space-3); margin: 0 0 var(--space-5); padding: var(--space-4); background: var(--color-sky); border-left: 4px solid var(--color-orange); border-radius: var(--radius-sm); }
+.vc-dialog__facts div { display: grid; gap: 2px; }
+.vc-dialog__facts dt { font-size: var(--font-size-sm); font-weight: 700; color: var(--color-text-secondary); }
+.vc-dialog__facts dd { margin: 0; font-weight: 700; }
+.vc-dialog__section + .vc-dialog__section { margin-top: var(--space-5); }
+.vc-dialog__section h4 { margin: 0 0 var(--space-2); font-size: var(--font-size-md); color: var(--color-navy); }
+.vc-dialog__section ul { margin: 0; padding-left: 1.25rem; }
+.vc-dialog__section li { margin-bottom: var(--space-2); }
+.vc-dialog__note { margin: var(--space-6) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.vc-dialog__foot { display: flex; flex-wrap: wrap; gap: var(--space-3); padding: var(--space-4) var(--space-5); border-top: 1px solid var(--color-border); background: var(--color-white); }
+@media (min-width: 40em) { .vc-dialog__facts { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); } }
 
 /* Enquiry layout, form messages and form helpers (shared by Travel Visa and the service pages) ---- */
 .enquiry { display: grid; gap: var(--space-6); align-items: start; }

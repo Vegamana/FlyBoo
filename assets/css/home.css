@@ -4,74 +4,11 @@
    ========================================================================== */
 
 
-/* Hero ------------------------------------------------------------------- */
-.home-hero { display: grid; color: var(--color-white); background: var(--color-white); }
-.home-hero__text {
-  display: flex;
-  align-items: center;
-  padding: var(--space-8) var(--gutter) var(--space-7);
-  background: var(--color-blue-text);
-}
-.home-hero__text { position: relative; overflow: hidden; }
-.home-hero__bg { position: absolute; inset: 0; }
-.home-hero__bg img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 35% 50%; display: block; }
-/* Steel Blue tint keeps the white text readable over the photograph */
-.home-hero__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgb(29 58 87 / 62%), rgb(43 99 153 / 24%)); }
-.home-hero__content h1, .home-hero__lede, .home-hero__content .eyebrow { text-shadow: 0 1px 14px rgb(29 58 87 / 55%); }
-.home-hero__content { position: relative; z-index: 1; width: 100%; max-width: 36rem; margin-inline: auto; }
-.home-hero h1 {
-  margin-bottom: var(--space-4);
-  font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4.25rem);
-  line-height: 1.08;
-  font-weight: 700;
-  color: var(--color-white);
-}
-.home-hero__lede {
-  max-width: 30rem;
-  margin-bottom: var(--space-6);
-  font-size: var(--font-size-md);
-  color: rgb(255 255 255 / 92%);
-}
-.home-hero__art { display: grid; place-items: center; padding: var(--space-6) var(--gutter); background: var(--color-white); }
-.home-hero__mascot { width: min(17rem, 70%); }
-/* Floating mascot: slow lift with a soft ground shadow that shrinks as it rises
-   (both switched off automatically for visitors who prefer reduced motion) */
-.home-hero__mascot { position: relative; padding-bottom: 4%; }
-.home-hero__mascot img { position: relative; z-index: 1; animation: mascot-float 7s ease-in-out infinite; will-change: transform; }
-.home-hero__mascot::after {
-  content: "";
-  position: absolute;
-  left: 22%;
-  bottom: 0;
-  width: 46%;
-  height: 5%;
-  background: radial-gradient(ellipse at center, rgb(29 58 87 / 26%) 0%, rgb(29 58 87 / 10%) 55%, rgb(29 58 87 / 0%) 72%);
-  animation: mascot-shadow 7s ease-in-out infinite;
-}
-@keyframes mascot-float {
-  0%, 100% { transform: translateY(0) rotate(-0.8deg); }
-  50% { transform: translateY(-16px) rotate(0.8deg); }
-}
-@keyframes mascot-shadow {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.82); opacity: 0.55; }
-}
-@media (min-width: 48em) {
-  .home-hero { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); min-height: min(86vh, 54rem); min-height: min(86svh, 54rem); }
-  .home-hero__text { padding-block: var(--space-8); }
-  .home-hero__content { margin-inline: 0 auto; max-width: 34rem; }
-  .home-hero__art { padding-block: var(--space-7); }
-  .home-hero__mascot { width: min(32rem, 100%); }
-}
-@media (min-width: 75em) {
-  /* Align the text edge with the page container */
-  .home-hero__text { padding-left: calc((100vw - var(--container-max)) / 2); }
-}
-
-.eyebrow--light { color: rgb(255 255 255 / 85%); }
-.btn--outline-light { background: transparent; color: var(--color-white); border-color: rgb(255 255 255 / 80%); }
-.btn--outline-light:hover { background: var(--color-white); color: var(--color-blue-text); border-color: var(--color-white); }
-.home-hero__text :focus-visible, .home-cta :focus-visible { outline-color: var(--color-white); }
+/* Hero: the photograph, shown in full ---------------------------------------------- */
+.home-hero { position: relative; background: var(--color-sky); }
+.home-hero img { display: block; width: 100%; height: auto; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; object-position: 58% 30%; }
+@media (min-width: 40em) { .home-hero img { aspect-ratio: 2000 / 924; } }
+.home-cta :focus-visible { outline-color: var(--color-white); }
 
 /* Section heads -------------------------------------------------------------- */
 .home-head { max-width: 38rem; margin-bottom: var(--space-7); }
@@ -81,6 +18,8 @@
 .section--ivory { background: var(--color-ivory); }
 .home-section { padding-block: var(--space-8); }
 @media (min-width: 64em) { .home-section { padding-block: var(--space-9); } }
+/* The first section sits right under the hero photograph, so it needs only a small top gap */
+.home-hero + .home-section { padding-top: var(--space-6); }
 
 /* Service index ---------------------------------------------------------------- */
 .services { display: grid; gap: var(--space-6); }

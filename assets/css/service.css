@@ -27,3 +27,12 @@
 
 .svc-links { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); margin: 0; padding: 0; list-style: none; }
 .svc-links a { font-weight: 700; }
+
+/* International Tours: package filter */
+.pkg-filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-5); }
+.pkg-filter label { font-weight: 700; color: var(--color-navy); }
+.pkg-filter .select { width: auto; min-width: min(100%, 16rem); }
+.pkg-count { margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.vc-grid > li[hidden] { display: none; }
+.pk-heading { margin: 0 0 var(--space-3); font-size: var(--font-size-md); color: var(--color-navy); }
+.vc-grid .card__meta { font-weight: 700; color: var(--color-text-secondary); }
