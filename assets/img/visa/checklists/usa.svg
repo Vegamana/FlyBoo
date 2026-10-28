@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+<!-- PLACEHOLDER ARTWORK: replace with a licensed photograph of this destination (about 1200x900, JPG/WebP) -->
+<defs><linearGradient id="a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c4f7e"/><stop offset="1" stop-color="#e6b98f"/></linearGradient></defs>
+<rect width="1200" height="900" fill="url(#a)"/>
+<circle cx="880" cy="330" r="70" fill="#fff4dc" opacity=".85"/>
+<path d="M0 600 L240 480 L460 580 L700 450 L1000 590 L1200 520 L1200 900 L0 900Z" fill="#162c4b" opacity=".6"/>
+<path d="M0 720 L300 650 L620 730 L900 660 L1200 730 L1200 900 L0 900Z" fill="#162c4b"/>
+</svg>

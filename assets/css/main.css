@@ -204,6 +204,85 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
   .primary-nav a:focus-visible { outline-offset: -4px; }
 }
 
+/* Holidays dropdown -------------------------------------------------------------- */
+.has-dropdown { position: relative; }
+.nav-dropdown__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 var(--gutter);
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-blue-text);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+.nav-dropdown__toggle:hover { background: var(--color-sky); color: var(--color-blue-dark); }
+.nav-dropdown__toggle:focus-visible { outline: 3px solid var(--color-focus); outline-offset: -3px; }
+.nav-dropdown__chevron { width: 1.1rem; height: 1.1rem; flex: none; transition: transform 0.2s ease; }
+.has-dropdown.is-open > .nav-dropdown__toggle .nav-dropdown__chevron { transform: rotate(180deg); }
+.has-dropdown.is-current > .nav-dropdown__toggle { font-weight: 700; border-left-color: var(--color-orange); }
+
+/* Mobile / tablet: the submenu opens inline, indented under Holidays */
+.js .nav-dropdown { display: none; background: var(--color-grey-soft); }
+.js .has-dropdown.is-open > .nav-dropdown { display: block; }
+.nav-dropdown a { padding-left: calc(var(--gutter) + var(--space-4)); font-weight: 600; }
+
+@media (min-width: 60em) {
+  .nav-dropdown__toggle {
+    width: auto;
+    min-height: var(--header-height);
+    padding: 0 var(--space-3);
+    font-size: 0.9375rem;
+    border-left: 0;
+    box-shadow: inset 0 -3px 0 transparent;
+    transition: box-shadow 0.15s ease;
+  }
+  .nav-dropdown__toggle:hover { background: transparent; box-shadow: inset 0 -3px 0 var(--color-blue); }
+  .nav-dropdown__toggle:focus-visible { outline-offset: -4px; }
+  .has-dropdown.is-current > .nav-dropdown__toggle { box-shadow: inset 0 -3px 0 var(--color-orange); }
+
+  /* Floating panel directly under the button (no gap, so hover is never lost) */
+  .nav-dropdown, .js .nav-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 60;
+    min-width: 15rem;
+    padding: var(--space-2) 0;
+    transform: translateX(-50%);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-orange);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+  .has-dropdown:hover > .nav-dropdown,
+  .has-dropdown.is-open > .nav-dropdown,
+  .js .has-dropdown:hover > .nav-dropdown,
+  .js .has-dropdown.is-open > .nav-dropdown { display: block; }
+  html:not(.js) .has-dropdown:focus-within > .nav-dropdown { display: block; }
+  .has-dropdown:hover > .nav-dropdown__toggle .nav-dropdown__chevron { transform: rotate(180deg); }
+
+  .nav-dropdown li { display: block; }
+  .primary-nav .nav-dropdown a {
+    min-height: 2.75rem;
+    padding: 0 var(--space-4);
+    font-size: 0.9375rem;
+    box-shadow: none;
+    white-space: nowrap;
+  }
+  .primary-nav .nav-dropdown a:hover { background: var(--color-sky); box-shadow: none; }
+  .primary-nav .nav-dropdown a[aria-current="page"] { background: var(--color-sky); box-shadow: inset 3px 0 0 var(--color-orange); }
+}
+
 /* 4. Buttons -------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -354,6 +433,9 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .pos-lake { object-position: 50% 62%; }
 .pos-vortex { object-position: 50% 58%; }
 .pos-low { object-position: 50% 75%; }
+.pos-right { object-position: 88% 50%; }
+.pos-mid { object-position: 50% 52%; }
+.pos-peak { object-position: 50% 45%; }
 .pos-town { object-position: 50% 68%; }
 
 .card__body { display: flex; flex-direction: column; flex: 1; gap: var(--space-2); padding: var(--space-5); }

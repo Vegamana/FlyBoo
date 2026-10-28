@@ -7,13 +7,13 @@
   <meta name="description" content="Choose your destination and enquire about visa assistance with FLYBOO.COM.">
   <meta name="theme-color" content="#ffffff">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20261025s">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261025s">
-  <link rel="stylesheet" href="assets/css/visa.css?v=20261025s">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261028o">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261028o">
+  <link rel="stylesheet" href="assets/css/visa.css?v=20261028o">
   <script src="assets/js/nav.js" defer></script>
-  <script src="assets/js/gallery.js" defer></script>
   <script src="assets/js/visa-data.js" defer></script>
   <script src="assets/js/visa.js" defer></script>
+  <script src="assets/js/checklists.js" defer></script>
 </head>
 <body>
 <div class="page-shell">
@@ -31,8 +31,13 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="domestic-tours.html">Domestic Tours</a></li>
-          <li><a href="international-tours.html">International Tours</a></li>
+          <li class="has-dropdown">
+            <button class="nav-dropdown__toggle" type="button" aria-expanded="false" aria-controls="holidays-menu">Holidays <svg class="nav-dropdown__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 8 5 5 5-5"/></svg></button>
+            <ul class="nav-dropdown" id="holidays-menu">
+              <li><a href="international-tours.html">International Tours</a></li>
+              <li><a href="domestic-tours.html">Domestic Tours</a></li>
+            </ul>
+          </li>
           <li><a href="travel-visa.html" aria-current="page">Travel Visa</a></li>
           <li><a href="flights.html">Flights</a></li>
           <li><a href="forex.html">Forex</a></li>
@@ -85,92 +90,810 @@
       </div>
     </div>
 
-    <!-- 3. Popular destinations -->
-    <section class="section" id="popular" aria-labelledby="popular-title">
+    <!-- Visa checklists: content from FLYBOO's checklist documents. START -->
+    <section class="section section--soft" id="checklists" aria-labelledby="checklists-title">
       <div class="container">
         <div class="section-heading">
-          <h2 id="popular-title">Popular Visa Destinations</h2>
-          <p>Choose a destination to start your enquiry.</p>
+          <h2 id="checklists-title">Visa Checklists</h2>
+          <p>Choose a destination to see the documents it asks for. These checklists are written for applicants applying from India.</p>
         </div>
-
-        <!-- PLACEHOLDER ARTWORK on every card: replace each with a licensed destination photograph
-             (about 800×600, JPG/WebP) and add a short descriptive alt text. -->
-        <ul class="dest-row" aria-label="Popular visa destinations">
+        <ul class="vc-grid">
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img class="pos-lake" src="assets/img/destinations/uae-900.jpg" width="675" height="900" alt="Aerial view from a Dubai skyscraper over the turquoise Dubai Fountain lake and downtown towers" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img src="assets/img/destinations/spain-900.jpg" width="900" height="600" alt="Rooftop view over Madrid’s Gran Vía at sunset, with the domed Metropolis building and the city skyline" loading="lazy" decoding="async"></div>
               <div class="card__body">
-                <h3 class="card__title">United Arab Emirates</h3>
-                <p class="card__text">Modern cities, desert escapes and beaches</p>
-                <p class="card__footer"><a class="dest-card__cta" href="travel-visa.html?destination=uae#enquiry" data-destination="uae">Explore Visa<span class="visually-hidden"> for United Arab Emirates</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+                <h3 class="card__title">Spain</h3>
+                <p class="card__text">Schengen tourist visa through BLS International</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-spain">Explore Visa<span class="visually-hidden"> for Spain</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
               </div>
             </article>
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img class="pos-vortex" src="assets/img/destinations/singapore-900.jpg" width="730" height="900" alt="Indoor waterfall beneath a glass dome, surrounded by tropical gardens in Singapore" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img src="assets/img/destinations/schengen-900.jpg" width="720" height="900" alt="Terracotta rooftops and a church bell tower beside the sea in a coastal European town" loading="lazy" decoding="async"></div>
               <div class="card__body">
-                <h3 class="card__title">Singapore</h3>
-                <p class="card__text">A compact, modern city-state</p>
-                <p class="card__footer"><a class="dest-card__cta" href="travel-visa.html?destination=singapore#enquiry" data-destination="singapore">Explore Visa<span class="visually-hidden"> for Singapore</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+                <h3 class="card__title">Schengen (France)</h3>
+                <p class="card__text">Tourist visa through the French mission and VFS</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-schengen">Explore Visa<span class="visually-hidden"> for Schengen (France)</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
               </div>
             </article>
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><div class="gallery" role="group" aria-roledescription="carousel" aria-label="Thailand photos">
-                <ul class="gallery__track" tabindex="0" aria-label="Thailand photos, scroll sideways to see more">
-                  <li><img src="assets/img/destinations/thailand-boat-900.jpg" width="900" height="600" alt="Longtail boat on a turquoise lake between misty limestone cliffs in Thailand" loading="lazy" decoding="async"></li>
-                  <li><img src="assets/img/destinations/thailand-900.jpg" width="900" height="600" alt="Ornate golden Thai temple and a tiered white pagoda under a blue sky" loading="lazy" decoding="async"></li>
-                </ul>
-              </div></div>
+              <div class="card__media"><img src="assets/img/destinations/canada-900.jpg" width="900" height="644" alt="Snow-capped mountains reflected in a turquoise lake, ringed by pine forest in Canada" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Canada</h3>
+                <p class="card__text">Visitor visa checklist</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-canada">Explore Visa<span class="visually-hidden"> for Canada</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card dest-card">
+              <div class="card__media"><img class="pos-low" src="assets/img/destinations/china-tourist-900.jpg" width="900" height="600" alt="Large red and gold imperial hall across a stone courtyard under a clear blue sky in China" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">China Tourist Visa</h3>
+                <p class="card__text">Tourist visa, single or double entry</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-china-tourist">Explore Visa<span class="visually-hidden"> for China Tourist Visa</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card dest-card">
+              <div class="card__media"><img class="pos-low" src="assets/img/destinations/china-business-900.jpg" width="900" height="600" alt="Shanghai skyline at dusk, with the Oriental Pearl Tower and glass towers lit up beside the river" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">China Business Visa</h3>
+                <p class="card__text">Business visa with an invitation letter</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-china-business">Explore Visa<span class="visually-hidden"> for China Business Visa</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/thailand-boat-900.jpg" width="900" height="600" alt="Longtail boat on a turquoise lake between misty limestone cliffs in Thailand" loading="lazy" decoding="async"></div>
               <div class="card__body">
                 <h3 class="card__title">Thailand</h3>
-                <p class="card__text">Beaches, temples and street food</p>
-                <p class="card__footer"><a class="dest-card__cta" href="travel-visa.html?destination=thailand#enquiry" data-destination="thailand">Explore Visa<span class="visually-hidden"> for Thailand</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+                <p class="card__text">Tourist visa and e-Visa options</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-thailand">Explore Visa<span class="visually-hidden"> for Thailand</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
               </div>
             </article>
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/destinations/malaysia-900.jpg" width="900" height="605" alt="Petronas Twin Towers and the Kuala Lumpur skyline lit up at dusk" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img class="pos-right" src="assets/img/destinations/japan-900.jpg" width="900" height="600" alt="Red pagoda on a wooded hillside above a city and mountains at sunset in Japan" loading="lazy" decoding="async"></div>
               <div class="card__body">
-                <h3 class="card__title">Malaysia</h3>
-                <p class="card__text">Rainforests, islands and vibrant cities</p>
-                <p class="card__footer"><a class="dest-card__cta" href="travel-visa.html?destination=malaysia#enquiry" data-destination="malaysia">Explore Visa<span class="visually-hidden"> for Malaysia</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+                <h3 class="card__title">Japan</h3>
+                <p class="card__text">Visa applications through VFS Global</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-japan">Explore Visa<span class="visually-hidden"> for Japan</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
               </div>
             </article>
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img class="pos-low" src="assets/img/destinations/uk-900.jpg" width="900" height="600" alt="Red double-decker bus on Westminster Bridge with the Houses of Parliament and Big Ben behind" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img src="assets/img/destinations/usa-900.jpg" width="900" height="506" alt="Red suspension bridge spanning a turquoise bay, with a city skyline in the distance" loading="lazy" decoding="async"></div>
               <div class="card__body">
-                <h3 class="card__title">United Kingdom</h3>
-                <p class="card__text">Historic cities and rolling countryside</p>
-                <p class="card__footer"><a class="dest-card__cta" href="travel-visa.html?destination=uk#enquiry" data-destination="uk">Explore Visa<span class="visually-hidden"> for United Kingdom</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+                <h3 class="card__title">United States</h3>
+                <p class="card__text">B1/B2 tourist visa interview documents</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-usa">Explore Visa<span class="visually-hidden"> for United States</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
               </div>
             </article>
           </li>
           <li>
             <article class="card dest-card">
-              <div class="card__media"><img class="pos-town" src="assets/img/destinations/schengen-900.jpg" width="720" height="900" alt="Terracotta rooftops and a church bell tower beside the sea in a coastal European town" loading="lazy" decoding="async"></div>
+              <div class="card__media"><img class="pos-mid" src="assets/img/destinations/turkey-900.jpg" width="616" height="900" alt="Minarets and domes of a grand mosque against a pink and blue dusk sky, with the city and water behind" loading="lazy" decoding="async"></div>
               <div class="card__body">
-                <h3 class="card__title">Schengen Area</h3>
-                <p class="card__text">Multi-country travel across Europe</p>
-                <p class="card__footer"><a class="dest-card__cta" href="travel-visa.html?destination=schengen#enquiry" data-destination="schengen">Explore Visa<span class="visually-hidden"> for Schengen Area</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+                <h3 class="card__title">Turkey</h3>
+                <p class="card__text">Tourist visa through the Mumbai consulate</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-turkey">Explore Visa<span class="visually-hidden"> for Turkey</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/azerbaijan-900.jpg" width="900" height="600" alt="Baku waterfront with a TV tower and three curved glass towers reflected in calm water" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Azerbaijan (Baku)</h3>
+                <p class="card__text">Online e-Visa, standard or urgent</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-azerbaijan">Explore Visa<span class="visually-hidden"> for Azerbaijan (Baku)</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card dest-card">
+              <div class="card__media"><img class="pos-peak" src="assets/img/destinations/new-zealand-900.jpg" width="601" height="900" alt="Winding road beside a turquoise lake, leading towards a snow-covered mountain peak" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">New Zealand</h3>
+                <p class="card__text">Tourist visa checklist</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-new-zealand">Explore Visa<span class="visually-hidden"> for New Zealand</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/australia-900.jpg" width="900" height="506" alt="Harbour with a white sail-roofed opera house, a steel arch bridge and a city skyline" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Australia</h3>
+                <p class="card__text">Visa with normal or urgent processing</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="vc-australia">Explore Visa<span class="visually-hidden"> for Australia</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
               </div>
             </article>
           </li>
         </ul>
-        <p class="section-note">Destination-specific requirements are added only after they have been verified.</p>
+        <p class="section-note">Fees and timelines are shown as listed in our checklists and can change. Official visa fees and centre or service charges are listed separately. A visa is never guaranteed.</p>
       </div>
+    <dialog class="vc-dialog" id="vc-spain" aria-labelledby="vc-spain-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Schengen tourist visa</p>
+            <h3 id="vc-spain-title">Spain visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Document checklist and fee structure for a Spain (Schengen) tourist visa for Indian passport holders applying through BLS International.</p>
+          <dl class="vc-dialog__facts"><div><dt>Official embassy fee</dt><dd>€90 adult (~₹8,000) · €45 child 6–12 (~₹4,000) · free under 6</dd></div><div><dt>Centre service charge</dt><dd>BLS service charge ~₹1,800</dd></div><div><dt>Standard processing</dt><dd>15 to 21 working days after biometrics at BLS International</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Mandatory core documents</h4>
+            <ul>
+              <li>Schengen visa application form: printed, filled online (or in blue ink) and physically signed on pages 3 and 4.</li>
+              <li>Original passport: valid at least 3 months beyond your planned departure from the Schengen area, issued within the last 10 years, with at least two blank pages. Include clear photocopies of all pages, including blank pages and previous visa stamps.</li>
+              <li>Previous passports: original expired or old passports, with copies of all previous visas.</li>
+              <li>Photographs (3 copies): 35mm × 45mm, taken within the last 6 months, plain white background, neutral expression, no glasses.</li>
+              <li>Personal covering letter, signed: purpose and travel dates, day-by-day itinerary, details of anyone travelling with you, and who is covering the expenses.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Travel and stay proofs</h4>
+            <ul>
+              <li>Confirmed round-trip flight reservations (to and from India, plus any internal Schengen travel).</li>
+              <li>Confirmed hotel vouchers covering every night of the stay across all Schengen countries visited.</li>
+              <li>Travel medical insurance: minimum cover of €30,000 (or $50,000) for emergency medical expenses, hospitalisation and repatriation. Valid for all Schengen states and for at least 15 days beyond the intended return date.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financial proofs</h4>
+            <ul>
+              <li>Personal bank statements: originals for the last 6 months, stamped and signed by the bank, showing a steady balance that covers daily expenses.</li>
+              <li>Income tax returns (ITR-V / acknowledgements) for the last 3 years.</li>
+              <li>Salary slips for the last 6 months, if employed.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Occupational status</h4>
+            <ul>
+              <li>Salaried: employment contract or formal employment letter, plus NOC / leave sanction letter on company letterhead.</li>
+              <li>Self-employed or business owner: business registration certificate / GST / certificate of incorporation, company bank statements (last 6 months) and company ITRs (last 3 years).</li>
+              <li>Students: bonafide letter or NOC from the school or university, student ID card copy, and the parents’ financial documents, sponsorship letter and birth certificate.</li>
+              <li>Retirees: pension payment slips or proof of retirement income.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>If a minor is travelling</h4>
+            <ul>
+              <li>Birth certificate (original and copy) and passport copies of both parents.</li>
+              <li>Application signed by both parents.</li>
+              <li>Notarised affidavit / NOC: from the non-accompanying parent if travelling with one parent, or from both parents if travelling without them.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=schengen#enquiry" data-destination="schengen">Start an enquiry for Spain</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-schengen" aria-labelledby="vc-schengen-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Schengen tourist visa</p>
+            <h3 id="vc-schengen-title">Schengen (France) visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Checklist for a Schengen tourist visa applied through the French mission and VFS.</p>
+          <dl class="vc-dialog__facts"><div><dt>Visa fee</dt><dd>INR 9,901</dd></div><div><dt>VFS charges</dt><dd>INR 3,500</dd></div><div><dt>Processing time</dt><dd>15 working days</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Passport and identity</h4>
+            <ul>
+              <li>Original passport valid at least 3 months beyond the date you leave the Schengen area, with at least two blank pages. Passports issued more than 10 years ago and handwritten passports are not accepted.</li>
+              <li>Passports with manual observations are accepted if you submit copies of the pages carrying the observation.</li>
+              <li>Attach all old passports, and copies of the first and last pages, visas, entry and exit stamps and any other inscriptions.</li>
+              <li>If you are not a national of your country of residence: proof that you are legally resident there (for example a residence permit).</li>
+              <li>If you hold an official travel document, a note verbale is required.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Application form and photographs</h4>
+            <ul>
+              <li>One online visa application form (france-visas.gouv.fr), printed back to back and signed in columns 37 and 38, together with the registration receipt and checklist with barcode, for every individual application.</li>
+              <li>Complete the declaration with the application. Include your mobile number on the form, as the embassy or consulate can contact you at any time. The visa appointment is booked after the online form is filled.</li>
+              <li>Two recent colour photographs, 35mm × 45mm, semi-matt finish, 80% face coverage, white background, no border, not more than 3 months old, and not used in any previous visa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Covering letter</h4>
+            <ul>
+              <li>Covering letter with your name, designation, passport number, and the purpose and duration of your visit, signed by an authorised signatory with company stamp.</li>
+              <li>Address it to the office you apply through: The Consulate General of France, Mumbai; The Visa Officer, Embassy of France, New Delhi; The Consulate General of France, Kolkata, Puducherry or Chennai; or The Visa Officer, Consulate General of France, Bangalore.</li>
+              <li>Use company letterhead if self-employed, or plain paper if employed.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financials</h4>
+            <ul>
+              <li>Personal ITR for the last 3 years (last 2 years only if applying from Mumbai).</li>
+              <li>Personal bank statement for the last 3 months on A4 paper only (6 months if applying from Mumbai).</li>
+              <li>Salary slips for the last 3 months.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Proof of occupation and status</h4>
+            <ul>
+              <li>Self-employed: company registration certificate or certificate of incorporation, and a brief company profile.</li>
+              <li>Employed: appointment letter and original leave letter on letterhead with the authorised signatory’s name, designation and company seal.</li>
+              <li>Freelancer: proof of occupation with financial documents.</li>
+              <li>Student: original NOC from the school or college with ID card copy.</li>
+              <li>Dependent: the main applicant’s documents apply.</li>
+              <li>Proof of socio-professional status (for example employment contract, certificate of employment, trade register extract, school attendance certificate or pension proof) and documents showing personal links to your country of residence (for example marriage certificate or family record book).</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Travel arrangements</h4>
+            <ul>
+              <li>Confirmed prepaid hotel reservation for the entire stay, matching the itinerary. The hotel should match the ticket dates, and the longest stay should be in France.</li>
+              <li>Confirmed air ticket (for a package tour, attach the detailed itinerary). Travel dates should be 7 to 10 days after you submit the application.</li>
+              <li>Original and copy of travel medical insurance for the stay, with cover of €30,000, taken from an authorised insurer and matching your travel dates.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>If a minor is travelling</h4>
+            <ul>
+              <li>If travelling with one parent or alone: an NOC from the other parent or both parents, as an affidavit on ₹100 stamp paper with a notary. Parents’ government ID copies are required.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Notes</h4>
+            <ul>
+              <li>If you are travelling to France for the first time, biometrics are required. If biometrics were submitted within the last five years, the application can be submitted at France VFS.</li>
+              <li>If you booked a tour through a tour company, a tour certificate is required.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=schengen#enquiry" data-destination="schengen">Start an enquiry for Schengen (France)</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-canada" aria-labelledby="vc-canada-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Visitor visa</p>
+            <h3 id="vc-canada-title">Canada visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Document checklist for a Canada visitor visa.</p>
+          <dl class="vc-dialog__facts"><div><dt>FLYBOO service charge</dt><dd>Professional support: INR 15,000 per applicant</dd></div><div><dt>Includes</dt><dd>Invitation letter and cover letter preparation, and round-trip flight bookings (for visa purposes only)</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Passport and identity documents</h4>
+            <ul>
+              <li>Current passport valid at least 6 months beyond the intended stay, and all old passports showing travel history.</li>
+              <li>Recent digital or passport-size photograph (35mm × 45mm, white background).</li>
+              <li>Aadhaar card copy, and copies of any previous visa refusal letters.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Purpose of visit</h4>
+            <ul>
+              <li>Visiting family or friends: invitation letter from the inviter in Canada, a copy of their passport / PR card / visa, and proof of relationship.</li>
+              <li>Tourism: tentative travel itinerary, hotel booking details (if available) and an optional day-wise plan.</li>
+              <li>Cover letter: purpose of visit, duration of stay, who will fund the trip, and assurance of return to India after the visit.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financial documents</h4>
+            <ul>
+              <li>Self-funded: personal bank statements for the last 4–6 months, bank balance certificate, income tax returns (last 2 years), salary slips (last 3 months) or business income proof, and fixed deposits or investment proofs, if any.</li>
+              <li>Sponsored: sponsor’s bank statements, ID proof and status proof, sponsorship letter, and the sponsor’s financial documents.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Employment or business documents</h4>
+            <ul>
+              <li>Employed: employment letter / NOC, leave approval letter, company ID card and salary slips for the last 3 months.</li>
+              <li>Self-employed: business registration certificate, GST certificate, company bank statements, and company ITR or audited financials.</li>
+              <li>Student: bonafide certificate or student ID, and leave approval from the institution (if applicable).</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Supporting documents</h4>
+            <ul>
+              <li>Marriage certificate (if applicable) and birth certificates (for minors).</li>
+              <li>Property or asset proofs (CA or CE report), LIC or investment proofs, and proof of family ties in India.</li>
+              <li>Previous visa copies and travel history.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=canada#enquiry" data-destination="canada">Start an enquiry for Canada</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-china-tourist" aria-labelledby="vc-china-tourist-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Tourist visa</p>
+            <h3 id="vc-china-tourist-title">China Tourist Visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Applications are submitted to the regional CVASC centre (New Delhi, Mumbai or Kolkata).</p>
+          <dl class="vc-dialog__facts"><div><dt>Consular fee</dt><dd>Single entry ₹2,400 · Double entry ₹3,600</dd></div><div><dt>Centre service fee</dt><dd>CVASC fee ~₹2,000–₹2,500 in addition</dd></div><div><dt>Standard processing</dt><dd>4 to 5 working days</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Mandatory core documents</h4>
+            <ul>
+              <li>Original passport valid at least 6 months from the date of entry, with at least 2 blank visa pages.</li>
+              <li>All previous passports (originals). If lost, an official police report / FIR with an explanation letter is required.</li>
+              <li>COVA application form and confirmation sheet: printed copy of the completed online application (visaforchina.cn), signed in ink on the confirmation page and the final declaration.</li>
+              <li>Passport photo (one physical copy), 33mm × 48mm: plain white background, taken within the last 6 months, ears exposed, neutral expression, no glasses, and dark clothing for contrast (avoid white or light tops).</li>
+              <li>Personal cover letter, signed: travel purpose, dates, day-by-day itinerary, and confirmation that the trip is self-funded.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Travel and accommodation proofs</h4>
+            <ul>
+              <li>Confirmed round-trip or onward flight itinerary.</li>
+              <li>Confirmed hotel vouchers covering every night of the stay in China.</li>
+              <li>Day-wise itinerary showing the cities to be visited and planned activities.</li>
+              <li>If staying with a host: an invitation letter with the applicant’s details and stay details, signed and stamped by the host, with a copy of the host’s Chinese ID or residence permit.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financial proofs</h4>
+            <ul>
+              <li>Original personal bank statement for the last 6 months, stamped and signed by the bank.</li>
+              <li>A minimum balance of ₹1,00,000 to ₹1,50,000 per person, maintained consistently over the 6 months. Consulates strictly reject sudden last-minute lump-sum deposits.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Occupational proofs</h4>
+            <ul>
+              <li>Salaried: employment verification / NOC on company letterhead, and salary slips for the last 3 months.</li>
+              <li>Self-employed or business owners: business registration (GST certificate, incorporation papers or Udyam) and company bank statements for the last 6 months.</li>
+              <li>Students: school or college ID card copy, bonafide / NOC letter, and the parents’ financial documents and sponsorship letter.</li>
+              <li>Retirees: pension payment slips or official retirement proof.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=china#enquiry" data-destination="china">Start an enquiry for China</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-china-business" aria-labelledby="vc-china-business-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Business visa</p>
+            <h3 id="vc-china-business-title">China Business Visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Applications are submitted to the regional CVASC centre (New Delhi, Mumbai or Kolkata).</p>
+          <dl class="vc-dialog__facts"><div><dt>Consular fee</dt><dd>Single ₹2,400 · Double ₹3,600 · Multiple (6/12 months) ₹4,800 / ₹7,200</dd></div><div><dt>Centre service fee</dt><dd>CVASC fee ~₹2,000–₹2,500 in addition</dd></div><div><dt>Standard processing</dt><dd>4 to 5 working days</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Mandatory core documents</h4>
+            <ul>
+              <li>Original passport valid at least 6 months beyond the date of entry, with at least 2 blank visa pages.</li>
+              <li>All previous passports (originals). If lost, an official FIR / police report with an explanation letter is required.</li>
+              <li>COVA application form and confirmation sheet: printed copy of the completed online application (visaforchina.cn), signed in ink on the confirmation page and the final declaration.</li>
+              <li>Passport photo (one physical copy), 33mm × 48mm: plain white background, taken within the last 6 months, ears exposed, neutral expression, no glasses, dark clothing.</li>
+              <li>Aadhaar card copy (front and back) as identity proof.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Business and invitation documents</h4>
+            <ul>
+              <li>Official invitation letter from the Chinese host or company, issued by a trade partner, business entity or trade fair authority in China. It must include: the applicant’s full name, gender, date of birth and passport number; purpose of visit, arrival and departure dates, places to be visited and the relationship between host and applicant; and the inviting entity’s company name, official phone number, address, official red stamp or seal, and the signature of the authorised legal representative.</li>
+              <li>Dispatch / covering letter from the Indian employer, on company letterhead, signed and stamped: the applicant’s designation, employment tenure and salary details; the explicit purpose of the trip and target dates; and a guarantee that the company will cover all travel expenses and that the applicant will return to India after the visit.</li>
+              <li>Indian company proof: business registration, certificate of incorporation or GST certificate.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financial and travel proofs</h4>
+            <ul>
+              <li>Company or personal bank statements: originals for the last 6 months, stamped and signed by the bank.</li>
+              <li>A consistent minimum balance of ₹1,00,000 to ₹1,50,000 per person over the 6 months. Sudden lump-sum deposits before applying are flagged and rejected.</li>
+              <li>Confirmed round-trip flight reservations and hotel vouchers covering the full itinerary.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=china#enquiry" data-destination="china">Start an enquiry for China</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-thailand" aria-labelledby="vc-thailand-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Tourist visa</p>
+            <h3 id="vc-thailand-title">Thailand visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Thailand tourist visa checklist.</p>
+          <dl class="vc-dialog__facts"><div><dt>Thailand e-Visa (popular)</dt><dd>499/-</dd></div><div><dt>Thailand tourist visa (stamp visa)</dt><dd>5,999/-</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Documents</h4>
+            <ul>
+              <li>Passport scan: a clear, colour scanned copy of the first and last page of your passport. The passport must be valid for at least six months from your planned arrival date and have at least two blank pages.</li>
+              <li>Recent photograph: one digital photograph on a plain white background.</li>
+              <li>Return flight tickets: confirmed Thailand flight tickets showing your departure from Thailand within the 30-day visa-free period. This shows you do not intend to overstay.</li>
+              <li>Hotel confirmation: proof of accommodation for the entire stay, such as Thailand hotel booking vouchers, or a letter from a host if visiting family and friends. It should clearly show your name and the address of your stay in Thailand.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=thailand#enquiry" data-destination="thailand">Start an enquiry for Thailand</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-japan" aria-labelledby="vc-japan-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Visa</p>
+            <h3 id="vc-japan-title">Japan visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">The application fee is paid when you submit your physical file at the VFS Global centre.</p>
+          <dl class="vc-dialog__facts"><div><dt>Embassy visa fee (single entry)</dt><dd>¥500 JPY</dd></div><div><dt>VFS service fee</dt><dd>₹1,200</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Mandatory core documents</h4>
+            <ul>
+              <li>Original passport valid at least 6 months with at least 2 blank pages. Include old or expired passports to show travel history.</li>
+              <li>Passport copy: colour or clear black-and-white photocopy of the front and back bio-data pages.</li>
+              <li>Visa application form, fully completed and signed. Do not leave fields blank; write “N/A” where appropriate.</li>
+              <li>One recent physical photograph: 45mm × 45mm (or 2 × 2 inches / 35mm × 45mm depending on local consulate rules), plain white background, 70–80% face coverage, no glasses, printed on matte or glossy paper.</li>
+              <li>Covering letter, signed: purpose of the trip, dates of travel, and who is bearing the expenses.</li>
+              <li>Day-by-day itinerary: planned dates, intended activities, hotel addresses and contact numbers for each day in Japan.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Travel and stay proofs</h4>
+            <ul>
+              <li>Round-trip flight itinerary or schedule showing travel to and from Japan.</li>
+              <li>Confirmed hotel reservations covering all nights of your stay in Japan.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financial proofs</h4>
+            <ul>
+              <li>Original personal bank statement for the last 6 months, stamped and signed by the bank, showing a healthy average balance to cover the trip.</li>
+              <li>ITR-V / acknowledgements for the last 1 to 2 years. If unavailable, provide an explanation letter with 6 months of bank statements.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Occupational and status proofs</h4>
+            <ul>
+              <li>Salaried: employment certificate / NOC / leave approval letter on official letterhead, and salary slips for the last 3 months.</li>
+              <li>Self-employed or business owners: business registration / GST / incorporation certificate, and company bank statements (last 6 months).</li>
+              <li>Students and dependents: school or college ID card copy and enrolment / NOC letter; the parent’s or spouse’s financial documents and a signed consent or sponsorship letter; and proof of relationship (birth or marriage certificate).</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=japan#enquiry" data-destination="japan">Start an enquiry for Japan</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-usa" aria-labelledby="vc-usa-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Tourist visa (B1/B2)</p>
+            <h3 id="vc-usa-title">United States visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Document checklist for a U.S. visitor visa interview for applicants applying from India, including Hyderabad. Covers tourism, family visits and short business trips. Official requirements can vary by consulate, so follow the instructions on your appointment confirmation.</p>
+          <dl class="vc-dialog__facts"><div><dt>Visa fee</dt><dd>US$185 for the B1/B2 tourist visa</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Mandatory documents</h4>
+            <ul>
+              <li>Original valid passport.</li>
+              <li>DS-160 confirmation page with barcode.</li>
+              <li>Visa appointment confirmation letter.</li>
+              <li>Visa application fee payment receipt, if applicable.</li>
+              <li>One recent U.S. visa photograph (2 × 2 inches), if required or if the online photo upload fails.</li>
+              <li>Previous passports, if available.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Supporting documents</h4>
+            <ul>
+              <li>Financial: last 6 months’ bank statements, latest income tax returns (if available), salary slips for the last 3–6 months if employed, and proof of savings, investments or other income.</li>
+              <li>Employment or business: employment verification letter, approved leave letter, employee ID card (if available); if self-employed, business registration, GST certificate and business bank statements, plus company financial statements or proof of business income where relevant.</li>
+              <li>Travel and family: tentative day-wise itinerary, proposed accommodation or U.S. address, invitation letter if visiting relatives or friends (optional), details of who will pay for the trip, marriage certificate and children’s birth certificates if relevant, and property or other evidence of ties to India if relevant.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Additional documents by applicant type</h4>
+            <ul>
+              <li>Salaried employee: employment letter, salary slips, leave approval and company ID.</li>
+              <li>Business owner: business registration, GST certificate, business bank statements, ITRs and proof of ongoing business.</li>
+              <li>Sponsored trip: the sponsor’s financial documents and a clear explanation of who is paying.</li>
+              <li>Family application: individual passport and DS-160 confirmation for each applicant, including children.</li>
+              <li>Previous U.S. refusal: accurate details of previous refusals and the relevant application history.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=usa#enquiry" data-destination="usa">Start an enquiry for United States</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-turkey" aria-labelledby="vc-turkey-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Tourist visa (Mumbai)</p>
+            <h3 id="vc-turkey-title">Turkey visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Turkey tourist visa checklist for applications through Mumbai. The embassy may ask for additional documents, and all applicants need to book an appointment.</p>
+          <dl class="vc-dialog__facts"><div><dt>Visa fees</dt><dd>5,900/-</dd></div><div><dt>VFS charges</dt><dd>13,500/-</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Passport, form and photographs</h4>
+            <ul>
+              <li>Original passport valid at least 6 months upon arrival in Türkiye, with at least 2 full blank pages. If the passport was not issued in the jurisdiction of the Turkish mission you apply to, local address proof is required.</li>
+              <li>Visa application form filled by hand in blue or black ink in block letters, with 1 biometric photo affixed, signed by the applicant (or legal guardian for minors). Your signature should match on all documents.</li>
+              <li>Every applicant aged 18 or above must fill and sign the undertaking letter and bring the original with the application. Print this checklist and bring it to your submission.</li>
+              <li>Two biometric photos, white background, taken within the last 6 months, full face clearly visible without shadow, no glasses, 2.5 inch × 2.5 inch.</li>
+              <li>Copies of the first, last and visa pages of the passport; proof of civil status (Aadhaar card, PAN card, clearly visible); original previous passports (if lost, a police FIR document is required).</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Covering letters and invitation</h4>
+            <ul>
+              <li>Personal covering letter with the entire travel plan: purpose of stay in detail, accompanying persons, duration of stay, occupation and an expenses clause, signed with contact details and addressed to “Consulate General of Turkey, Mumbai”. A spouse and children travelling together must also submit personal covering letters. Travel dates on the letter must match all other documents.</li>
+              <li>Original leave letter on company letterhead stating the applicant’s designation, period of work, salary, purpose of visit, duration and travel dates, with signature, seal and stamp. Students: a no-objection letter from the school or official holiday scheme, with student ID card copy.</li>
+              <li>If visiting a Turkish citizen or a foreigner residing in Türkiye: an invitation letter with the applicant’s passport number and full name, a copy of the host’s Turkish identity card and passport or residence permit / visa copy, with address proof and contact number.</li>
+              <li>If an employer, proprietor, partner or director: company registration documents naming the applicant and company, and GST registration, both with original notary attestation. If you have no GST or Udyam certificate, an explanation is required.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Monetary documents</h4>
+            <ul>
+              <li>Last 3 months’ salary slips on letterhead with original signature and seal / stamp.</li>
+              <li>Last 6 months’ salary bank statement and personal bank statement, with the bank’s stamp and signature on all pages. Bank balance must be a minimum of 2 lakh INR for one person. Statements should be updated to within at least the last 15 days, with the closing balance clearly shown (or a bank balance certificate).</li>
+              <li>ITR for the last 3 years (if you do not file ITR, give an explanation in the cover letter), and Form 16 (employers only).</li>
+              <li>Retired: retirement documents and income proof with the last 3 months’ personal bank statement. Freelancer: contract documents, leave / cover letter, proof of regular income and 6 months’ personal bank statement. Unemployed: an explanation of your source of income in the cover letter with proof of income.</li>
+              <li>Any educational, CA, bar council or doctor’s certificates must be submitted as notarised colour copies.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Travel arrangements</h4>
+            <ul>
+              <li>Round-trip flight ticket. It is highly recommended not to buy a ticket before the visa is granted; a reservation is acceptable.</li>
+              <li>Hotel reservation. If booked through an agent or tour operator, include the applicant’s name and check-in and check-out dates on letterhead with seal, signature, name and designation.</li>
+              <li>Travel insurance covering the duration of stay in Türkiye (the policy can be provided at submission at the Türkiye Visa Application Centres).</li>
+              <li>Original authorisation letter from the applicant and travel agent if a representative or agent submits the application.</li>
+              <li>Tour itinerary (optional).</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Family and minors</h4>
+            <ul>
+              <li>Birth certificate copy with the original notarised document if a child under 18 is travelling, and an original school bonafide and NOC on school letterhead with signatory’s name, signature and school seal.</li>
+              <li>Minors need a notarised consent letter from both parents in all cases, with the parents’ original passports and photocopies attached. If a parent lives abroad, an NOC attested by the Indian embassy or consulate there, with a copy of that parent’s resident card or visa. The minor’s form is normally signed by both parents. If only one parent is the legal guardian (death or divorce), a notarised death certificate or court decision is required.</li>
+              <li>Marriage certificate with the original notarised document if a husband and wife travel together but are not named on the last page of their passports. A notarised affidavit with wedding card and photographs is accepted only for a marriage not older than 1 month.</li>
+              <li>If the husband sponsors the trip, a sponsor letter for the wife and children is required.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Important notes</h4>
+            <ul>
+              <li>Address proof can be a registered or notarised rental agreement and a company letter. Voter ID, electricity or water bills and a police clearance certificate (PCC) of the current address may be requested.</li>
+              <li>All affidavits should be e-stamped and online verifiable. All letters must be typed (not handwritten), on letterhead, sealed and signed by an authorised person whose name, designation and contact details are clearly stated.</li>
+              <li>If a sponsor supplies the monetary documents, include an original sponsorship letter, the sponsor’s passport copy, and employment letter or notarised company registration, plus relationship proof if the sponsor is a relative.</li>
+              <li>You can apply for a Türkiye visa at most 60 days before your travel dates.</li>
+              <li>E-Visa eligibility: an applicant holding a UK, US or Schengen visa valid for the entire stay may be eligible for the e-Visa. The supporting visa must remain valid for at least 6 months from the date of the e-Visa application and also be valid during travel to Turkey.</li>
+              <li>If you travel with a family member or friend who holds a sticker visa or e-Visa for Türkiye, provide a copy of that visa with the co-traveller’s passport copies.</li>
+              <li>Rental income: notarised rental income proof and real estate registration documents are required if you submit rental income documents.</li>
+              <li>Damaged passports are accepted for submission only with a letter of acknowledgement from the applicant.</li>
+              <li>Group applications: notarised company registration documents should be submitted only by the main applicant. Other members of the group can submit a copy.</li>
+              <li>If a spouse is not shown in the passport and you travel together: a marriage certificate issued by the marriage registrar and attested by a notary public.</li>
+              <li>Passport holders of countries other than India, Nepal or Bhutan can apply at Turkish missions in India only with a valid Indian visa of at least 90 days’ stay or a resident / work permit in India, and processing can take longer.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=turkey#enquiry" data-destination="turkey">Start an enquiry for Turkey</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-azerbaijan" aria-labelledby="vc-azerbaijan-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">e-Visa</p>
+            <h3 id="vc-azerbaijan-title">Azerbaijan (Baku) visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Apply online through the official ASAN e-Visa portal (evisa.gov.az).</p>
+          <dl class="vc-dialog__facts"><div><dt>Standard e-Visa</dt><dd>₹2,500 government fee · 3 working days</dd></div><div><dt>Urgent e-Visa</dt><dd>₹6,000 government fee · within 3 hours</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Documents needed to apply online</h4>
+            <ul>
+              <li>Passport scan: a clear colour scan or photo of the main bio-data page, valid for at least 3 to 6 months beyond your intended stay.</li>
+              <li>Email address: an active email ID where the electronic visa PDF will be sent.</li>
+              <li>Payment method: an international credit or debit card to pay the processing fee online.</li>
+              <li>Travel and accommodation details: proposed travel dates and your hotel or stay address in Baku.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Documents to carry when flying to Baku</h4>
+            <ul>
+              <li>Original passport: the same one used in the online application.</li>
+              <li>Printed e-Visa: a colour or clear black-and-white printout of the e-Visa PDF.</li>
+              <li>Return or onward flight tickets: a confirmed ticket back to India or on to another destination.</li>
+              <li>Hotel voucher: confirmed booking for your stay in Baku.</li>
+              <li>Travel insurance and proof of funds: highly recommended. Carry travel insurance covering medical expenses and proof of sufficient funds (bank statement or international card).</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=azerbaijan#enquiry" data-destination="azerbaijan">Start an enquiry for Azerbaijan (Baku)</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-new-zealand" aria-labelledby="vc-new-zealand-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Tourist visa</p>
+            <h3 id="vc-new-zealand-title">New Zealand visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Please share clear colour scanned copies of the documents below.</p>
+          <dl class="vc-dialog__facts"><div><dt>Visa fee</dt><dd>INR 27,000 (approx.)</dd></div><div><dt>Processing time</dt><dd>Minimum 15–20 working days</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Documents</h4>
+            <ul>
+              <li>Passport copies: scans of the first and last pages, previous visas and stamped pages, including old passports. The passport must be valid for at least six months with at least two blank pages for the visa stamp.</li>
+              <li>Photograph: one recent passport-size photo with matt or semi-matt finish, 60%–80% face coverage, white background and no border (35mm × 45mm), not more than 3 months old and not used in any previous visa.</li>
+              <li>Covering letter from the applicant with name, designation, passport number, and the purpose and duration of the visit, signed with name, designation and company stamp, addressed to The Visa Officer, Immigration New Zealand, New Delhi. Use letterhead if self-employed, or plain paper if employed.</li>
+              <li>If visiting family or a relative: invitation letter, passport copy, visa or resident card copy, utility bill copy, and any other supporting documents.</li>
+              <li>Confirmed return air ticket and hotel confirmation copy.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financials</h4>
+            <ul>
+              <li>If employed: personal ITR for the last 3 years, six months’ salary slips, an updated personal bank statement for the last six months showing the bank’s name and telephone number clearly with sufficient balance, and a leave sanction letter / NOC from the company.</li>
+              <li>Students: school or college ID card copy with bonafide certificate copy. If under 18 and travelling alone, a consent letter signed by both parents with their passport copies.</li>
+              <li>Individuals travelling alone: a consent letter from parents or spouse in support of the visit.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=new-zealand#enquiry" data-destination="new-zealand">Start an enquiry for New Zealand</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="vc-australia" aria-labelledby="vc-australia-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">Visa</p>
+            <h3 id="vc-australia-title">Australia visa checklist</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close checklist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Please share clear scanned copies of the documents, along with filled and signed forms. All documents should be scanned under 5MB.</p>
+          <dl class="vc-dialog__facts"><div><dt>Visa fee</dt><dd>AUD 257</dd></div><div><dt>Urgent visa fee</dt><dd>AUD 1,120 in addition to the visa fee</dd></div><div><dt>Processing time</dt><dd>Normal: minimum 20–25 working days · Urgent: 2–3 working days</dd></div></dl>
+          <section class="vc-dialog__section">
+            <h4>Core documents and forms</h4>
+            <ul>
+              <li>Passport: current valid passport with at least six months’ validity (excluding blank pages), and all previous stamped and visa pages.</li>
+              <li>Australia visa application form, filled online. Also the Family Information Form, duly filled and signed, and the Authorization Form (Form 956A), duly filled and signed.</li>
+              <li>One recent passport-size photograph with matt or semi-matt finish, 60%–80% face coverage, white background and no border (35mm × 45mm).</li>
+              <li>Covering letter from the applicant with name, designation, passport number, and the purpose and duration of the visit, signed and addressed to The Visa Officer, Australian High Commission, New Delhi. On company letterhead with stamp and authorised signature if self-employed.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Invitation and sponsorship</h4>
+            <ul>
+              <li>If visiting relatives or friends: an invitation letter from the relative or friend in Australia, with proof of their legal status (passport and visa copies), residence proof and employment proof. If they are paying for the visit, attach their financials (bank statement and salary slips for the last 6 months).</li>
+              <li>If sponsored: a sponsorship letter with the sponsor’s financial documents (personal ITR for the last 3 years, six months’ salary slips, and an updated personal bank statement for the last six months showing the bank’s name and telephone number clearly with sufficient balance).</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Travel arrangements (not mandatory)</h4>
+            <ul>
+              <li>Airline reservation: ticket itinerary, tour itinerary and tour confirmation.</li>
+              <li>Hotel confirmation.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Financials</h4>
+            <ul>
+              <li>If employed: personal ITR for the last 3 years, six months’ salary slips, and an updated personal bank statement for the last six months with sufficient balance, showing the bank’s name and telephone number clearly.</li>
+              <li>If self-employed: company ITR for the last 3 years, company bank statement for the last six months showing the bank’s name and telephone number clearly, company registration certificate / certificate of incorporation, and optionally a credit card copy, foreign exchange endorsement or traveller’s cheque.</li>
+              <li>If a student: school or college ID card copy.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Special cases</h4>
+            <ul>
+              <li>Children (under 18) travelling alone, or not with a parent or guardian: Form 1229, a consent / no objection letter signed by the parents, passport copies of both parents, the parents’ financial documents (personal ITR for the last 3 years, six months’ salary slips, personal bank statement for the last six months), and a birth certificate copy.</li>
+              <li>Applicants above 70 years: medical (travel) insurance of 12 months, and an “Aged Visitor Health Check” completed by a DIAC-appointed panel doctor.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Requirements, fees and timelines are set by the issuing authority and can change. Please confirm the current details with our team before you apply. FLYBOO.COM provides visa assistance and does not issue visas. The final decision rests with the relevant government or consular authority.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <a class="btn btn--primary" href="travel-visa.html?destination=australia#enquiry" data-destination="australia">Start an enquiry for Australia</a>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
     </section>
+    <!-- Visa checklists END -->
 
     <!-- 4. Visa application process -->
     <section class="section section--sky" aria-labelledby="process-title">
@@ -447,7 +1170,7 @@
             <p>Tell us where you&rsquo;re headed and a visa specialist can help with the next steps.</p>
             <div class="btn-group">
               <a class="btn btn--primary btn--lg" href="#enquiry">Make a Visa Enquiry</a>
-              <a class="btn btn--secondary btn--lg" href="#popular">Browse Destinations</a>
+              <a class="btn btn--secondary btn--lg" href="#checklists">Browse Visa Checklists</a>
             </div>
           </div>
         </div>
@@ -472,8 +1195,13 @@
         <h2 class="footer__heading">Explore</h2>
         <ul class="footer__links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="domestic-tours.html">Domestic Tours</a></li>
-          <li><a href="international-tours.html">International Tours</a></li>
+          <li class="has-dropdown">
+            <button class="nav-dropdown__toggle" type="button" aria-expanded="false" aria-controls="holidays-menu">Holidays <svg class="nav-dropdown__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 8 5 5 5-5"/></svg></button>
+            <ul class="nav-dropdown" id="holidays-menu">
+              <li><a href="international-tours.html">International Tours</a></li>
+              <li><a href="domestic-tours.html">Domestic Tours</a></li>
+            </ul>
+          </li>
           <li><a href="travel-visa.html">Travel Visa</a></li>
           <li><a href="flights.html">Flights</a></li>
           <li><a href="forex.html">Forex</a></li>
