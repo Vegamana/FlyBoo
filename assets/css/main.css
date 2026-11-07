@@ -438,6 +438,7 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .pos-peak { object-position: 50% 45%; }
 .pos-gate { object-position: 50% 27%; }
 .pos-isle { object-position: 62% 60%; }
+.pos-hill { object-position: 50% 80%; }
 .pos-town { object-position: 50% 68%; }
 
 .card__body { display: flex; flex-direction: column; flex: 1; gap: var(--space-2); padding: var(--space-5); }

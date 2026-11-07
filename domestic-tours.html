@@ -7,11 +7,13 @@
   <meta name="description" content="Enquire about domestic tours with FLYBOO.COM.">
   <meta name="theme-color" content="#ffffff">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20261028b">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261028b">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261028b">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261029u">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261029u">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261029u">
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/enquiry.js" defer></script>
+  <script src="assets/js/packages.js" defer></script>
+  <script src="assets/js/checklists.js" defer></script>
 </head>
 <body>
 <div class="page-shell">
@@ -66,14 +68,1521 @@
       </div>
     </section>
 
-    <section class="section section--soft" aria-labelledby="pkg-title">
+    <!-- Tour packages: content from FLYBOO's itinerary documents. START -->
+    <section class="section section--soft" id="packages" aria-labelledby="pkg-title">
       <div class="container">
-        <div class="section-heading"><h2 id="pkg-title">Packages</h2></div>
-        <div class="panel svc-note">
-          <p>Domestic tour packages are being added to this page. Until then, send an enquiry and tell us what you&rsquo;re looking for. Prices and inclusions will be shown here once they are confirmed.</p>
+        <div class="section-heading">
+          <h2 id="pkg-title">Tour Packages</h2>
+          <p>Choose a package to see its day-wise itinerary, then send an enquiry for pricing and availability.</p>
         </div>
+        <div class="pkg-filter">
+          <label for="pkg-filter">Destination</label>
+          <select class="select" id="pkg-filter"><option value="">All destinations</option><option value="Kerala">Kerala</option><option value="Kashmir">Kashmir</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Rajasthan">Rajasthan</option><option value="Leh Ladakh">Leh Ladakh</option><option value="Assam &amp; Meghalaya">Assam &amp; Meghalaya</option><option value="Goa">Goa</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Gujarat">Gujarat</option><option value="Char Dham Yatra">Char Dham Yatra</option><option value="Ayodhya &amp; Varanasi">Ayodhya &amp; Varanasi</option><option value="Sikkim">Sikkim</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option></select>
+          <p class="pkg-count" id="pkg-count" role="status" aria-live="polite">Showing 19 packages</p>
+        </div>
+        <ul class="vc-grid" id="pkg-grid">
+          <li data-group="Kerala">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/kerala-900.jpg" width="900" height="601" alt="Traditional thatched-roof houseboat gliding along a calm backwater lined with palm and banana trees in Kerala" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Kerala</h3>
+                <p class="card__meta">4 Nights / 5 Days</p>
+                <p class="card__text">Munnar, Thekkady and Alleppey</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-kerala-4n">View Itinerary<span class="visually-hidden"> for Kerala, 4 Nights / 5 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Kerala">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/kerala-900.jpg" width="900" height="601" alt="Traditional thatched-roof houseboat gliding along a calm backwater lined with palm and banana trees in Kerala" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Kerala</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Munnar, Thekkady, Alleppey and Kovalam</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-kerala-5n">View Itinerary<span class="visually-hidden"> for Kerala, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Kashmir">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/kashmir-900.jpg" width="900" height="600" alt="Colourful wooden shikara boats on a misty lake, with tall poplar trees and cloud-covered hills behind in Kashmir" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Kashmir</h3>
+                <p class="card__meta">6 Nights / 7 Days</p>
+                <p class="card__text">Srinagar, Gulmarg and Pahalgam</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-kashmir-6n">View Itinerary<span class="visually-hidden"> for Kashmir, 6 Nights / 7 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Kashmir">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/kashmir-900.jpg" width="900" height="600" alt="Colourful wooden shikara boats on a misty lake, with tall poplar trees and cloud-covered hills behind in Kashmir" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Kashmir</h3>
+                <p class="card__meta">8 Nights / 9 Days</p>
+                <p class="card__text">Srinagar, Gulmarg, Sonamarg and Pahalgam</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-kashmir-8n">View Itinerary<span class="visually-hidden"> for Kashmir, 8 Nights / 9 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Himachal Pradesh">
+            <article class="card dest-card">
+              <div class="card__media"><img class="pos-hill" src="assets/img/destinations/himachal-900.jpg" width="600" height="900" alt="Hillside houses and red-roofed buildings among pine trees, with low cloud drifting through the mountain valley in Himachal Pradesh" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Himachal Pradesh</h3>
+                <p class="card__meta">6 Nights / 7 Days</p>
+                <p class="card__text">Shimla, Kufri, Manali and Solang Valley</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-himachal-6n">View Itinerary<span class="visually-hidden"> for Himachal Pradesh, 6 Nights / 7 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Rajasthan">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/rajasthan-900.jpg" width="900" height="600" alt="Two decorated horses with riders passing in front of the pink sandstone Hawa Mahal in Jaipur, Rajasthan" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Rajasthan</h3>
+                <p class="card__meta">4 Nights / 5 Days</p>
+                <p class="card__text">Jaipur and Jodhpur</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-rajasthan-4n">View Itinerary<span class="visually-hidden"> for Rajasthan, 4 Nights / 5 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Rajasthan">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/rajasthan-900.jpg" width="900" height="600" alt="Two decorated horses with riders passing in front of the pink sandstone Hawa Mahal in Jaipur, Rajasthan" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Rajasthan</h3>
+                <p class="card__meta">6 Nights / 7 Days</p>
+                <p class="card__text">Jaipur, Jodhpur and Jaisalmer, with a desert camp</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-rajasthan-6n">View Itinerary<span class="visually-hidden"> for Rajasthan, 6 Nights / 7 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Leh Ladakh">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/ladakh-900.jpg" width="900" height="600" alt="A motorcyclist riding a winding road towards snow-capped peaks in Ladakh" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Leh Ladakh</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Leh, Nubra Valley and Pangong Lake</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-leh-ladakh-5n">View Itinerary<span class="visually-hidden"> for Leh Ladakh, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Assam &amp; Meghalaya">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/assam-900.jpg" width="900" height="676" alt="Colourful wooden boats pulled up on the grassy bank of a calm lake, with forested hills behind in Assam" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Assam</h3>
+                <p class="card__meta">4 Nights / 5 Days</p>
+                <p class="card__text">Kaziranga, Shillong and Cherrapunji</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-assam-4n">View Itinerary<span class="visually-hidden"> for Assam, 4 Nights / 5 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Goa">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/goa-900.jpg" width="900" height="600" alt="Colourful beach huts under tall coconut palms, with fishing boats on the sand in Goa" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Goa</h3>
+                <p class="card__meta">3 Nights / 4 Days</p>
+                <p class="card__text">North Goa, South Goa and Old Goa</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-goa-3n">View Itinerary<span class="visually-hidden"> for Goa, 3 Nights / 4 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Goa">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/goa-900.jpg" width="900" height="600" alt="Colourful beach huts under tall coconut palms, with fishing boats on the sand in Goa" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Goa</h3>
+                <p class="card__meta">4 Nights / 5 Days</p>
+                <p class="card__text">North Goa, South Goa, Old Goa and a leisure day</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-goa-4n">View Itinerary<span class="visually-hidden"> for Goa, 4 Nights / 5 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Tamil Nadu">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/tamil-nadu-900.jpg" width="900" height="566" alt="Colourful temple gateway tower reflected in a still temple tank in Tamil Nadu" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Tamil Nadu</h3>
+                <p class="card__meta">4 Nights / 5 Days</p>
+                <p class="card__text">Mahabalipuram, Pondicherry, Thanjavur and Madurai</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-tamil-nadu-4n">View Itinerary<span class="visually-hidden"> for Tamil Nadu, 4 Nights / 5 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Gujarat">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/gujarat-900.jpg" width="900" height="900" alt="The Statue of Unity towering at the end of a long covered walkway under a clear blue sky in Gujarat" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Gujarat</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Ahmedabad, Statue of Unity, Dwarka and Somnath</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-gujarat-5n">View Itinerary<span class="visually-hidden"> for Gujarat, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Char Dham Yatra">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/packages/char-dham.svg" width="1200" height="900" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Char Dham Yatra</h3>
+                <p class="card__meta">12 Nights / 13 Days</p>
+                <p class="card__text">Yamunotri, Gangotri, Kedarnath and Badrinath</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-char-dham-12n">View Itinerary<span class="visually-hidden"> for Char Dham Yatra, 12 Nights / 13 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Ayodhya &amp; Varanasi">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/ayodhya-900.jpg" width="900" height="680" alt="Large cream-coloured stone temple with a tall spire, decorated with orange marigold garlands, in Ayodhya" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Ayodhya</h3>
+                <p class="card__meta">2 Nights / 3 Days</p>
+                <p class="card__text">Ayodhya darshan and the Saryu River Aarti</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-ayodhya-2n">View Itinerary<span class="visually-hidden"> for Ayodhya, 2 Nights / 3 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Ayodhya &amp; Varanasi">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/ayodhya-900.jpg" width="900" height="680" alt="Large cream-coloured stone temple with a tall spire, decorated with orange marigold garlands, in Ayodhya" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Ayodhya + Varanasi</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Ayodhya, Varanasi ghats and Sarnath</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-ayodhya-varanasi-5n">View Itinerary<span class="visually-hidden"> for Ayodhya + Varanasi, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Sikkim">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/sikkim-900.jpg" width="900" height="600" alt="Colourful prayer flags above a still high-altitude lake with snow-capped Himalayan peaks beyond in Sikkim" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Sikkim</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Gangtok, Tsomgo Lake and North Sikkim</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-sikkim-5n">View Itinerary<span class="visually-hidden"> for Sikkim, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Madhya Pradesh">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/destinations/madhya-pradesh-900.jpg" width="900" height="675" alt="Curved colonnade of carved sandstone pillars around an ancient stone courtyard under a deep blue sky in Madhya Pradesh" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Madhya Pradesh</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Bhopal, Sanchi, Khajuraho, Orchha and Gwalior</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-madhya-pradesh-5n">View Itinerary<span class="visually-hidden"> for Madhya Pradesh, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+          <li data-group="Maharashtra">
+            <article class="card dest-card">
+              <div class="card__media"><img src="assets/img/packages/maharashtra.svg" width="1200" height="900" alt="" loading="lazy" decoding="async"></div>
+              <div class="card__body">
+                <h3 class="card__title">Maharashtra</h3>
+                <p class="card__meta">5 Nights / 6 Days</p>
+                <p class="card__text">Mumbai, Lonavala, Pune and Mahabaleshwar</p>
+                <p class="card__footer"><button class="dest-card__cta" type="button" data-checklist-open="pk-maharashtra-5n">View Itinerary<span class="visually-hidden"> for Maharashtra, 5 Nights / 6 Days</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></p>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <p class="section-note">Prices and inclusions are not shown on this page. Send an enquiry and our team will get back to you.</p>
       </div>
+    <dialog class="vc-dialog" id="pk-kerala-4n" aria-labelledby="pk-kerala-4n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">4 Nights / 5 Days</p>
+            <h3 id="pk-kerala-4n-title">Kerala itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Cochin – Transfer to Munnar</h4>
+            <ul>
+              <li>Arrive in Cochin and proceed to Munnar, enjoying scenic waterfalls, lush greenery, and tea plantations along the way.</li>
+              <li>Overnight stay in Munnar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Munnar Sightseeing</h4>
+            <ul>
+              <li>Visit Eravikulam National Park (subject to availability), Mattupetty Dam, Echo Point, Kundala Lake, and the Tea Museum.</li>
+              <li>Overnight stay in Munnar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Munnar to Thekkady</h4>
+            <ul>
+              <li>Travel to Thekkady and explore the spice plantations. Enjoy an optional Periyar Lake boating experience or a cultural show.</li>
+              <li>Overnight stay in Thekkady.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Thekkady to Alleppey</h4>
+            <ul>
+              <li>Proceed to Alleppey and enjoy a relaxing backwater cruise or an optional houseboat stay amid Kerala&#x27;s beautiful waterways.</li>
+              <li>Overnight stay in Alleppey.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Alleppey to Cochin – Departure</h4>
+            <ul>
+              <li>After breakfast, transfer to Cochin Airport for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Kerala – 4 Nights / 5 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-kerala-5n" aria-labelledby="pk-kerala-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-kerala-5n-title">Kerala itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Cochin – Munnar</h4>
+            <ul>
+              <li>Meet your representative and transfer to Munnar. Enjoy the scenic drive through Kerala&#x27;s countryside.</li>
+              <li>Overnight stay in Munnar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Munnar Local Sightseeing</h4>
+            <ul>
+              <li>Visit Mattupetty Dam, Echo Point, Kundala Lake, the Tea Museum, and nearby tea gardens.</li>
+              <li>Overnight stay in Munnar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Munnar to Thekkady</h4>
+            <ul>
+              <li>Travel to Thekkady, known for its wildlife sanctuary and spice plantations. Enjoy optional boating or a traditional cultural performance.</li>
+              <li>Overnight stay in Thekkady.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Thekkady to Alleppey</h4>
+            <ul>
+              <li>Transfer to Alleppey and explore its famous backwaters. Enjoy an optional houseboat cruise.</li>
+              <li>Overnight stay in Alleppey.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Alleppey to Kovalam</h4>
+            <ul>
+              <li>Proceed to Kovalam, a beautiful coastal destination. Relax at Lighthouse Beach and enjoy the seaside atmosphere.</li>
+              <li>Overnight stay in Kovalam.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Kovalam to Trivandrum – Departure</h4>
+            <ul>
+              <li>Enjoy breakfast and transfer to Trivandrum Airport for departure.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Kerala – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-kashmir-6n" aria-labelledby="pk-kashmir-6n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">6 Nights / 7 Days</p>
+            <h3 id="pk-kashmir-6n-title">Kashmir itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Srinagar</h4>
+            <ul>
+              <li>Arrive in Srinagar, transfer to your hotel or houseboat, and enjoy a relaxing Shikara ride on Dal Lake.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Srinagar Local Sightseeing</h4>
+            <ul>
+              <li>Visit the Mughal Gardens, Nishat Bagh, Shalimar Bagh, Chashme Shahi, and Shankaracharya Temple, subject to access.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Srinagar to Gulmarg</h4>
+            <ul>
+              <li>Travel to Gulmarg, famous for its alpine meadows and mountain scenery. Enjoy the optional Gondola cable car ride, subject to weather and ticket availability.</li>
+              <li>Overnight stay in Gulmarg or Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Srinagar to Pahalgam</h4>
+            <ul>
+              <li>Proceed to Pahalgam, enjoying the scenic countryside and riverside landscapes. Explore the local market and surroundings.</li>
+              <li>Overnight stay in Pahalgam.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Pahalgam Sightseeing</h4>
+            <ul>
+              <li>Explore the beautiful valleys and meadows around Pahalgam. Aru Valley, Betaab Valley, and Chandanwari can be visited subject to local transport rules and weather.</li>
+              <li>Overnight stay in Pahalgam.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Pahalgam to Srinagar</h4>
+            <ul>
+              <li>Return to Srinagar and enjoy leisure time for shopping or local exploration.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 7 – Departure from Srinagar</h4>
+            <ul>
+              <li>After breakfast, transfer to Srinagar Airport for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Kashmir – 6 Nights / 7 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-kashmir-8n" aria-labelledby="pk-kashmir-8n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">8 Nights / 9 Days</p>
+            <h3 id="pk-kashmir-8n-title">Kashmir itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Srinagar</h4>
+            <ul>
+              <li>Airport pickup, hotel check-in, and an evening Shikara ride on Dal Lake.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Srinagar Sightseeing</h4>
+            <ul>
+              <li>Visit the famous Mughal Gardens, Shankaracharya Temple, and local markets.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Excursion to Gulmarg</h4>
+            <ul>
+              <li>Explore Gulmarg&#x27;s scenic meadows and enjoy an optional Gondola ride.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Srinagar to Sonamarg</h4>
+            <ul>
+              <li>Travel to Sonamarg, known for its spectacular Himalayan landscapes. Enjoy local sightseeing depending on weather and road conditions.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Srinagar to Pahalgam</h4>
+            <ul>
+              <li>Proceed to Pahalgam through scenic countryside and enjoy the natural beauty of the Lidder River valley.</li>
+              <li>Overnight stay in Pahalgam.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Pahalgam Sightseeing</h4>
+            <ul>
+              <li>Visit Aru Valley, Betaab Valley, and Chandanwari, subject to seasonal access and local transport arrangements.</li>
+              <li>Overnight stay in Pahalgam.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 7 – Pahalgam to Srinagar</h4>
+            <ul>
+              <li>Return to Srinagar and enjoy leisure time.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 8 – Srinagar Leisure &amp; Shopping</h4>
+            <ul>
+              <li>Enjoy a relaxed day exploring Srinagar, shopping for Kashmiri handicrafts, or visiting any missed local attractions.</li>
+              <li>Overnight stay in Srinagar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 9 – Departure from Srinagar</h4>
+            <ul>
+              <li>Transfer to Srinagar Airport for your onward flight.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Kashmir – 8 Nights / 9 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-himachal-6n" aria-labelledby="pk-himachal-6n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">6 Nights / 7 Days</p>
+            <h3 id="pk-himachal-6n-title">Himachal Pradesh itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Chandigarh – Transfer to Shimla</h4>
+            <ul>
+              <li>Arrive in Chandigarh and proceed to Shimla. Enjoy the scenic mountain drive.</li>
+              <li>Overnight stay in Shimla.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Shimla &amp; Kufri Sightseeing</h4>
+            <ul>
+              <li>Visit Kufri, Mall Road, The Ridge, Christ Church, and Lakkar Bazaar.</li>
+              <li>Overnight stay in Shimla.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Shimla to Manali</h4>
+            <ul>
+              <li>Travel to Manali through beautiful mountain valleys and picturesque villages.</li>
+              <li>Overnight stay in Manali.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Manali Local Sightseeing</h4>
+            <ul>
+              <li>Visit Hadimba Devi Temple, Vashisht Temple, the Tibetan Monastery, and Old Manali. Explore Mall Road in the evening.</li>
+              <li>Overnight stay in Manali.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Solang Valley Excursion</h4>
+            <ul>
+              <li>Enjoy the mountain scenery at Solang Valley, with optional seasonal activities. A visit to Atal Tunnel or Sissu can be arranged subject to weather and road conditions.</li>
+              <li>Overnight stay in Manali.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Manali to Chandigarh</h4>
+            <ul>
+              <li>Depart for Chandigarh and check in to your hotel.</li>
+              <li>Overnight stay in Chandigarh.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 7 – Departure</h4>
+            <ul>
+              <li>Transfer to Chandigarh Airport or railway station for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Himachal Pradesh – 6 Nights / 7 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-rajasthan-4n" aria-labelledby="pk-rajasthan-4n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">4 Nights / 5 Days</p>
+            <h3 id="pk-rajasthan-4n-title">Rajasthan itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Jaipur | Welcome to the Pink City</h4>
+            <ul>
+              <li>Arrive in Jaipur and transfer to your hotel. Visit Hawa Mahal and explore the local markets.</li>
+              <li>Overnight stay in Jaipur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Jaipur Sightseeing</h4>
+            <ul>
+              <li>Visit Amber Fort, City Palace, Jantar Mantar, and Jal Mahal. Enjoy shopping for traditional handicrafts and textiles.</li>
+              <li>Overnight stay in Jaipur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Jaipur to Jodhpur</h4>
+            <ul>
+              <li>Travel to Jodhpur, the Blue City of Rajasthan. Upon arrival, explore the Clock Tower market and the surrounding old city.</li>
+              <li>Overnight stay in Jodhpur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Jodhpur Sightseeing</h4>
+            <ul>
+              <li>Visit Mehrangarh Fort, Jaswant Thada, and Umaid Bhawan Palace Museum. Enjoy the city&#x27;s royal architecture and cultural heritage.</li>
+              <li>Overnight stay in Jodhpur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Departure from Jodhpur</h4>
+            <ul>
+              <li>After breakfast, transfer to Jodhpur Airport or railway station for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Rajasthan – 4 Nights / 5 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-rajasthan-6n" aria-labelledby="pk-rajasthan-6n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">6 Nights / 7 Days</p>
+            <h3 id="pk-rajasthan-6n-title">Rajasthan itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Jaipur</h4>
+            <ul>
+              <li>Arrive in Jaipur, the Pink City. Visit Hawa Mahal and explore the local markets.</li>
+              <li>Overnight stay in Jaipur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Jaipur Sightseeing</h4>
+            <ul>
+              <li>Visit Amber Fort, City Palace, Jantar Mantar, and Jal Mahal.</li>
+              <li>Overnight stay in Jaipur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Jaipur to Jodhpur</h4>
+            <ul>
+              <li>Travel to Jodhpur, the Blue City. Explore the local market and Clock Tower area.</li>
+              <li>Overnight stay in Jodhpur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Jodhpur Sightseeing</h4>
+            <ul>
+              <li>Visit Mehrangarh Fort, Jaswant Thada, and Umaid Bhawan Palace Museum.</li>
+              <li>Overnight stay in Jodhpur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Jodhpur to Jaisalmer</h4>
+            <ul>
+              <li>Proceed to Jaisalmer, famous for its golden sandstone architecture.</li>
+              <li>Overnight stay in Jaisalmer.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Jaisalmer Fort &amp; Sam Sand Dunes</h4>
+            <ul>
+              <li>Explore Jaisalmer Fort, Patwon Ki Haveli, and Gadisar Lake. Later, enjoy a desert experience at Sam Sand Dunes with an optional camel ride and cultural evening.</li>
+              <li>Overnight stay in a desert camp.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 7 – Departure from Jaisalmer</h4>
+            <ul>
+              <li>Transfer to Jaisalmer Airport or railway station for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Rajasthan – 6 Nights / 7 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-leh-ladakh-5n" aria-labelledby="pk-leh-ladakh-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-leh-ladakh-5n-title">Leh Ladakh itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Leh</h4>
+            <ul>
+              <li>Arrive in Leh and transfer to your hotel. Rest and acclimatize to the high altitude; avoid strenuous activities.</li>
+              <li>Overnight stay in Leh.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Leh Local Sightseeing</h4>
+            <ul>
+              <li>Visit Shanti Stupa, Leh Palace, Hall of Fame, and the local market, depending on your comfort and acclimatization.</li>
+              <li>Overnight stay in Leh.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Leh to Nubra Valley</h4>
+            <ul>
+              <li>Travel across Khardung La, subject to road conditions, and proceed to Nubra Valley. Visit Diskit Monastery and enjoy an optional camel ride at Hunder.</li>
+              <li>Overnight stay in Nubra Valley.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Nubra Valley to Pangong Lake</h4>
+            <ul>
+              <li>Travel towards the breathtaking Pangong Lake, famous for its changing shades of blue and dramatic mountain scenery. The route depends on road and permit conditions.</li>
+              <li>Overnight stay near Pangong Lake.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Pangong Lake to Leh</h4>
+            <ul>
+              <li>Enjoy the beautiful lake views in the morning and return to Leh.</li>
+              <li>Overnight stay in Leh.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Departure from Leh</h4>
+            <ul>
+              <li>Transfer to Leh Airport for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Leh Ladakh – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-assam-4n" aria-labelledby="pk-assam-4n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">4 Nights / 5 Days</p>
+            <h3 id="pk-assam-4n-title">Assam itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Guwahati – Transfer to Kaziranga</h4>
+            <ul>
+              <li>Arrive at Guwahati Airport and proceed to Kaziranga National Park, famous for its one-horned rhinoceros and rich wildlife.</li>
+              <li>Overnight stay in Kaziranga.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Kaziranga National Park Safari</h4>
+            <ul>
+              <li>Enjoy an optional early-morning jeep safari to explore the park&#x27;s wildlife and scenic grasslands. Spend the rest of the day at leisure or visit nearby local attractions.</li>
+              <li>Overnight stay in Kaziranga.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Kaziranga to Shillong</h4>
+            <ul>
+              <li>Travel to Shillong, Meghalaya&#x27;s charming hill station. Enjoy the scenic journey and explore Police Bazaar in the evening.</li>
+              <li>Overnight stay in Shillong.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Shillong &amp; Cherrapunji Excursion</h4>
+            <ul>
+              <li>Visit Elephant Falls and proceed to Cherrapunji to explore Nohkalikai Falls, Seven Sisters Falls, and Mawsmai Cave, subject to weather and access.</li>
+              <li>Overnight stay in Shillong.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Shillong to Guwahati – Departure</h4>
+            <ul>
+              <li>Transfer to Guwahati Airport for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Assam – 4 Nights / 5 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-goa-3n" aria-labelledby="pk-goa-3n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">3 Nights / 4 Days</p>
+            <h3 id="pk-goa-3n-title">Goa itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Goa</h4>
+            <ul>
+              <li>Arrive in Goa, transfer to your hotel, and spend the evening relaxing at the beach.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – North Goa Tour</h4>
+            <ul>
+              <li>Visit Fort Aguada, Calangute Beach, Baga Beach, and Anjuna Beach. Enjoy leisure time and optional water sports.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – South Goa Tour</h4>
+            <ul>
+              <li>Visit Old Goa&#x27;s historic churches, Panaji, Dona Paula, and Miramar Beach. Enjoy an optional evening river cruise.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Departure from Goa</h4>
+            <ul>
+              <li>Enjoy breakfast, check out from the hotel, and transfer to the airport.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Goa – 3 Nights / 4 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-goa-4n" aria-labelledby="pk-goa-4n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">4 Nights / 5 Days</p>
+            <h3 id="pk-goa-4n-title">Goa itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Goa | Beachside Welcome</h4>
+            <ul>
+              <li>Arrive at Goa Airport and transfer to your hotel. Relax at the beach and enjoy the sunset.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – North Goa Sightseeing</h4>
+            <ul>
+              <li>Visit Fort Aguada, Candolim Beach, Calangute Beach, Baga Beach, and Anjuna Beach. Enjoy shopping and optional water sports, subject to availability.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – South Goa Sightseeing</h4>
+            <ul>
+              <li>Explore Old Goa&#x27;s historic churches, including Basilica of Bom Jesus, and visit Se Cathedral. Continue to Dona Paula, Miramar Beach, and the charming areas of Panaji.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Goa Leisure Day</h4>
+            <ul>
+              <li>Enjoy a relaxed day at the beach, explore local markets, or choose optional activities such as a Mandovi River cruise or a spice plantation visit.</li>
+              <li>Overnight stay in Goa.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Departure from Goa</h4>
+            <ul>
+              <li>After breakfast, check out and transfer to Goa Airport for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Goa – 4 Nights / 5 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-tamil-nadu-4n" aria-labelledby="pk-tamil-nadu-4n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">4 Nights / 5 Days</p>
+            <h3 id="pk-tamil-nadu-4n-title">Tamil Nadu itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Chennai – Transfer to Mahabalipuram</h4>
+            <ul>
+              <li>Arrive in Chennai and proceed to Mahabalipuram. Visit the Shore Temple and the famous Five Rathas, subject to arrival time.</li>
+              <li>Overnight stay in Mahabalipuram.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Mahabalipuram to Pondicherry</h4>
+            <ul>
+              <li>Explore Mahabalipuram&#x27;s historic monuments and continue to Pondicherry. Visit the French Quarter, Promenade Beach, and White Town.</li>
+              <li>Overnight stay in Pondicherry.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Pondicherry to Thanjavur</h4>
+            <ul>
+              <li>Enjoy a morning visit to Auroville or local attractions, then proceed to Thanjavur, renowned for its Chola heritage.</li>
+              <li>Overnight stay in Thanjavur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Thanjavur to Madurai</h4>
+            <ul>
+              <li>Visit the magnificent Brihadeeswarar Temple before travelling to Madurai. In the evening, visit Meenakshi Amman Temple, subject to temple timings.</li>
+              <li>Overnight stay in Madurai.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Madurai Sightseeing &amp; Departure</h4>
+            <ul>
+              <li>Enjoy breakfast and explore any remaining local attractions, depending on your departure schedule. Transfer to Madurai Airport for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Tamil Nadu – 4 Nights / 5 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-gujarat-5n" aria-labelledby="pk-gujarat-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-gujarat-5n-title">Gujarat itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Ahmedabad | Heritage &amp; Culture</h4>
+            <ul>
+              <li>Arrive in Ahmedabad and transfer to your hotel. Visit Sabarmati Ashram, Adalaj Stepwell, and the beautiful Akshardham Temple in Gandhinagar, subject to opening hours.</li>
+              <li>Overnight stay in Ahmedabad.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Ahmedabad to Statue of Unity | Kevadia</h4>
+            <ul>
+              <li>After breakfast, proceed to Kevadia to visit the magnificent Statue of Unity, the world&#x27;s tallest statue. Explore the Statue of Unity viewing gallery, Valley of Flowers, and Sardar Sarovar Dam viewpoint, subject to availability and entry timings.</li>
+              <li>Overnight stay in Kevadia.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Kevadia to Dwarka | Sacred Journey</h4>
+            <ul>
+              <li>After breakfast, travel to Dwarka, one of the most important Hindu pilgrimage destinations in India. Upon arrival, check in to the hotel and visit Dwarkadhish Temple, subject to darshan timings.</li>
+              <li>Overnight stay in Dwarka.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Dwarka Sightseeing | Spiritual Gujarat</h4>
+            <ul>
+              <li>Visit Nageshwar Jyotirlinga Temple, Gopi Talav, and Rukmini Devi Temple. Enjoy a visit to the scenic Gomti Ghat and attend evening temple darshan, subject to timings.</li>
+              <li>Overnight stay in Dwarka.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Dwarka to Somnath | Coastal &amp; Spiritual Heritage</h4>
+            <ul>
+              <li>After breakfast, proceed to Somnath. En route, explore Porbandar and visit Kirti Mandir, the birthplace memorial of Mahatma Gandhi. Upon arrival in Somnath, visit the famous Somnath Temple and enjoy the coastal surroundings.</li>
+              <li>Overnight stay in Somnath.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Somnath to Ahmedabad / Rajkot – Departure</h4>
+            <ul>
+              <li>After breakfast, check out and transfer to Ahmedabad or Rajkot Airport for your onward journey. The transfer should be planned according to the flight schedule, as the road journey can be lengthy.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Gujarat – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-char-dham-12n" aria-labelledby="pk-char-dham-12n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">12 Nights / 13 Days</p>
+            <h3 id="pk-char-dham-12n-title">Char Dham Yatra itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Delhi • Haridwar • Barkot • Yamunotri • Uttarkashi • Gangotri • Kedarnath • Badrinath • Rishikesh • Delhi</p>
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Delhi to Haridwar – Arrival &amp; Local Exploration</h4>
+            <ul>
+              <li>Meet your driver upon arrival in Delhi and proceed to Haridwar, approximately 240 km away. Upon arrival, check in to your accommodation and relax after the journey.</li>
+              <li>In the evening, visit Har Ki Pauri to witness the sacred Ganga Aarti, subject to timing and availability. You may explore the nearby ghats and local markets at your own pace.</li>
+              <li>Overnight stay: Haridwar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Haridwar Local Sightseeing</h4>
+            <ul>
+              <li>After breakfast, proceed for local sightseeing in Haridwar. Visit Mansa Devi Temple, accessible by cable car or on foot, depending on your preference and fitness level.</li>
+              <li>Explore the bustling local markets, where you can shop for religious souvenirs, handicrafts, and traditional sweets. In the evening, attend the Ganga Aarti at Har Ki Pauri and experience the spiritual atmosphere along the banks of the Ganges.</li>
+              <li>Return to your accommodation for dinner and relaxation.</li>
+              <li>Overnight stay: Haridwar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Haridwar to Barkot via Mussoorie</h4>
+            <ul>
+              <li>After breakfast, depart for Barkot, a scenic town that serves as the base for the Yamunotri pilgrimage. The journey covers approximately 210 km and may take around 6–7 hours, depending on traffic and road conditions.</li>
+              <li>En route, enjoy the beautiful mountain scenery and, if time and route conditions permit, stop at Kempty Falls near Mussoorie.</li>
+              <li>Upon arrival in Barkot, check in to your accommodation and relax in preparation for the Yamunotri Yatra.</li>
+              <li>Overnight stay: Barkot.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Yamunotri Darshan – Return to Barkot</h4>
+            <ul>
+              <li>Start early in the morning and drive towards Janki Chatti via Hanuman Chatti and Phool Chatti. From Janki Chatti, begin the approximately 5 km trek to Yamunotri Temple.</li>
+              <li>Upon arrival, seek blessings at Yamunotri Dham and visit Surya Kund and Divya Shila, important pilgrimage sites associated with the temple. You may also visit the natural hot-water springs, subject to local conditions.</li>
+              <li>After completing darshan and prayers, trek back to Janki Chatti, meet your driver, and return to Barkot.</li>
+              <li>Overnight stay: Barkot.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Barkot to Uttarkashi – Temple Visit &amp; Leisure</h4>
+            <ul>
+              <li>After breakfast, proceed towards Uttarkashi, approximately 100 km away, with a journey time of around 4 hours.</li>
+              <li>Upon arrival, visit the revered Kashi Vishwanath Temple and explore the local surroundings. The remainder of the day is reserved for relaxation after the previous day&#x27;s trek.</li>
+              <li>Overnight stay: Uttarkashi.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Gangotri Darshan &amp; Harsil Excursion</h4>
+            <ul>
+              <li>Depart early in the morning with a packed breakfast for Gangotri, one of the four sacred Char Dham pilgrimage destinations. The drive covers approximately 99 km and takes around 4 hours each way.</li>
+              <li>Visit Gangotri Temple and offer prayers to Goddess Ganga. Explore Bhagirath Shila and Gangotri Ghat, and enjoy the serene Himalayan surroundings. En route, visit Harsil, a picturesque mountain village known for its natural beauty, subject to the day&#x27;s schedule and road conditions.</li>
+              <li>After completing darshan, return to Uttarkashi.</li>
+              <li>Overnight stay: Uttarkashi.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 7 – Uttarkashi to Guptkashi / Sitapur via Tehri</h4>
+            <ul>
+              <li>After an early breakfast, depart for Guptkashi or Sitapur. This is a long scenic drive of approximately 290 km, generally taking 7–10 hours depending on traffic and road conditions.</li>
+              <li>En route, enjoy views of the beautiful Himalayan landscape and Tehri Dam. Upon arrival, check in to your accommodation and relax in preparation for the Kedarnath pilgrimage.</li>
+              <li>Overnight stay: Guptkashi / Sitapur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 8 – Kedarnath Yatra – Trek to Kedarnath Temple</h4>
+            <ul>
+              <li>Begin early in the morning and drive to Sonprayag, the designated point for onward travel towards Gaurikund. From Sonprayag, use the authorised local transport to reach Gaurikund, as applicable.</li>
+              <li>Begin the trek to Kedarnath Temple, approximately 16–18 km from Gaurikund depending on the route and current arrangements. Upon reaching Kedarnath Dham, seek blessings at the sacred temple and participate in prayers and darshan, subject to the temple schedule.</li>
+              <li>Overnight stay: Kedarnath.</li>
+              <li>Important notes: Helicopter services, pony rides, and palki services are optional and subject to availability.</li>
+              <li>Important notes: Helicopter tickets and additional transport charges are not included unless specifically mentioned in the package.</li>
+              <li>Important notes: The trek requires good physical fitness and preparation for high-altitude conditions.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 9 – Kedarnath to Guptkashi / Sitapur – Return Trek</h4>
+            <ul>
+              <li>After an early morning visit to Kedarnath Temple, begin the return trek towards Gaurikund. Upon reaching the designated pickup point, meet your driver and proceed towards Guptkashi or Sitapur.</li>
+              <li>Enjoy the scenic mountain surroundings along the way and relax after completing this important part of the Char Dham pilgrimage.</li>
+              <li>Overnight stay: Guptkashi / Sitapur.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 10 – Guptkashi / Sitapur to Badrinath via Joshimath</h4>
+            <ul>
+              <li>After breakfast, depart for Badrinath, travelling through the beautiful Himalayan region via Joshimath, Govindghat, and Pandukeshwar. The journey covers approximately 196 km and may take around 6–8 hours or longer, depending on road conditions.</li>
+              <li>Upon arrival, check in to your accommodation. If time permits, visit Badrinath Temple for evening darshan or attend the evening Aarti, subject to temple timings.</li>
+              <li>Overnight stay: Badrinath.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 11 – Badrinath Darshan, Mana Village &amp; Panch Prayag Route</h4>
+            <ul>
+              <li>Begin the day with a visit to Badrinath Temple for darshan and prayers. If time and access permit, explore Mana Village, traditionally regarded as one of India&#x27;s last villages near the Indo-Tibetan border. Attractions may include Vyas Gufa, Ganesh Gufa, and the Saraswati River viewpoint.</li>
+              <li>Later, depart towards Rudraprayag or Pipalkoti. En route, enjoy views of the Himalayan ranges and visit the river confluences at Vishnuprayag, Nandprayag, and Karnaprayag, subject to the route and available time.</li>
+              <li>Overnight stay: Rudraprayag / Pipalkoti.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 12 – Rudraprayag to Rishikesh / Haridwar</h4>
+            <ul>
+              <li>After breakfast, proceed towards Rishikesh or Haridwar. En route, visit Devprayag, the sacred confluence of the Alaknanda and Bhagirathi rivers, which form the Ganges.</li>
+              <li>Upon reaching Rishikesh, explore the spiritual surroundings and visit the areas around Ram Jhula and Laxman Jhula, subject to current access arrangements. Enjoy the evening Ganga Aarti if time permits.</li>
+              <li>Continue to Haridwar or Rishikesh for your overnight stay, according to the package arrangements.</li>
+              <li>Overnight stay: Haridwar / Rishikesh.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 13 – Haridwar / Rishikesh to Delhi – Departure</h4>
+            <ul>
+              <li>After breakfast, check out and proceed to Delhi, approximately 240 km away. The drive usually takes around 5–6 hours or longer depending on traffic.</li>
+              <li>Upon arrival in Delhi, you will be dropped off at the airport, railway station, or your preferred destination as per the agreed transfer arrangements.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Char Dham Yatra – 12 Nights / 13 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-ayodhya-2n" aria-labelledby="pk-ayodhya-2n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">2 Nights / 3 Days</p>
+            <h3 id="pk-ayodhya-2n-title">Ayodhya itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Ayodhya | Spiritual Welcome</h4>
+            <ul>
+              <li>Arrive in Ayodhya and transfer to your accommodation. After check-in, proceed for local sightseeing and explore the sacred city associated with Lord Shri Ram.</li>
+              <li>Visit Hanuman Garhi Temple and Kanak Bhawan. In the evening, experience the spiritual atmosphere at Ram Ki Paidi and attend the Saryu River Aarti, subject to timings and access.</li>
+              <li>Overnight stay in Ayodhya.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Ayodhya Darshan | Ram Mandir &amp; Sacred Sites</h4>
+            <ul>
+              <li>After breakfast, proceed for a full day of spiritual sightseeing.</li>
+              <li>Visit Shri Ram Janmabhoomi Mandir for darshan, followed by Dashrath Mahal, Kanak Bhawan (if not visited on Day 1), and other important temples around the city. Explore the local religious markets and enjoy time for prayers and shopping.</li>
+              <li>In the evening, revisit the Saryu River ghats or attend the evening Aarti, subject to the day&#x27;s schedule.</li>
+              <li>Overnight stay in Ayodhya.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Ayodhya Sightseeing &amp; Departure</h4>
+            <ul>
+              <li>After breakfast, check out and visit any remaining attractions, such as Guptar Ghat or the nearby temples, depending on your departure schedule.</li>
+              <li>Later, transfer to Ayodhya Airport or railway station for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Ayodhya – 2 Nights / 3 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-ayodhya-varanasi-5n" aria-labelledby="pk-ayodhya-varanasi-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-ayodhya-varanasi-5n-title">Ayodhya + Varanasi itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Spiritual Journey</p>
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Ayodhya</h4>
+            <ul>
+              <li>Arrive at Ayodhya Airport or Railway Station.</li>
+              <li>Transfer to the hotel and check in.</li>
+              <li>Visit Hanuman Garhi and Kanak Bhawan.</li>
+              <li>In the evening, visit Ram Ki Paidi and attend the Saryu River Aarti, subject to timings.</li>
+              <li>Overnight stay in Ayodhya.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Ayodhya Local Sightseeing</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Visit Shri Ram Janmabhoomi Mandir.</li>
+              <li>Explore Dashrath Mahal, Nageshwarnath Temple, and other important spiritual sites, depending on time and access.</li>
+              <li>Enjoy shopping for religious souvenirs in the local market.</li>
+              <li>Overnight stay in Ayodhya.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Ayodhya to Varanasi</h4>
+            <ul>
+              <li>Breakfast and check out.</li>
+              <li>Transfer to Varanasi by private vehicle or train, depending on the package arrangement.</li>
+              <li>Arrive in Varanasi and check in to the hotel.</li>
+              <li>In the evening, visit Dashashwamedh Ghat to witness the famous Ganga Aarti.</li>
+              <li>Overnight stay in Varanasi.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Varanasi Temple Visit and Sightseeing</h4>
+            <ul>
+              <li>Early morning visit to Kashi Vishwanath Temple for darshan.</li>
+              <li>Experience a boat ride on the River Ganga at sunrise, subject to availability and weather.</li>
+              <li>Visit Annapurna Temple, Vishalakshi Temple, and Sankat Mochan Hanuman Temple.</li>
+              <li>Explore the ghats and local markets.</li>
+              <li>Overnight stay in Varanasi.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Sarnath Excursion</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Proceed to Sarnath, an important Buddhist pilgrimage site.</li>
+              <li>Visit Dhamek Stupa, the archaeological site, and the Buddhist temple area, subject to opening hours.</li>
+              <li>Return to Varanasi.</li>
+              <li>Enjoy leisure time or attend the evening Ganga Aarti if desired.</li>
+              <li>Overnight stay in Varanasi.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Departure from Varanasi</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Check out and transfer to Varanasi Airport or Railway Station for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Ayodhya + Varanasi – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-sikkim-5n" aria-labelledby="pk-sikkim-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-sikkim-5n-title">Sikkim itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Gangtok, Tsomgo Lake &amp; North Sikkim</p>
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival at Bagdogra / NJP – Transfer to Gangtok</h4>
+            <ul>
+              <li>Arrive at Bagdogra Airport or New Jalpaiguri Railway Station.</li>
+              <li>Meet the representative and transfer to Gangtok.</li>
+              <li>Enjoy the scenic drive through the Himalayan foothills.</li>
+              <li>Check in to the hotel and relax.</li>
+              <li>Evening free for leisure at MG Marg.</li>
+              <li>Overnight stay in Gangtok.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Gangtok Local Sightseeing</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Visit Tashi View Point, Ganesh Tok, Hanuman Tok, and the Directorate of Handicrafts and Handloom.</li>
+              <li>Explore Enchey Monastery and Banjhakri Falls, subject to the sightseeing schedule.</li>
+              <li>Enjoy shopping and leisure time at MG Marg.</li>
+              <li>Overnight stay in Gangtok.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Excursion to Tsomgo Lake &amp; Baba Mandir</h4>
+            <ul>
+              <li>Early breakfast at the hotel.</li>
+              <li>Proceed for an excursion to Tsomgo Lake, a beautiful high-altitude glacial lake.</li>
+              <li>Visit Baba Harbhajan Singh Mandir, subject to permit and road conditions.</li>
+              <li>Optional visit to Nathula Pass at an additional cost, subject to permit approval and availability.</li>
+              <li>Return to Gangtok.</li>
+              <li>Overnight stay in Gangtok.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Gangtok to Lachung</h4>
+            <ul>
+              <li>Breakfast and check out from the hotel.</li>
+              <li>Drive towards Lachung through scenic mountain roads.</li>
+              <li>En route, enjoy views of waterfalls, valleys, and Himalayan landscapes.</li>
+              <li>Visit scenic stops such as Singhik View Point, subject to route and road conditions.</li>
+              <li>Arrive in Lachung and check in.</li>
+              <li>Overnight stay in Lachung.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Yumthang Valley – Return to Gangtok</h4>
+            <ul>
+              <li>Early breakfast and proceed to Yumthang Valley, popularly known as the Valley of Flowers.</li>
+              <li>Enjoy views of snow-capped mountains, alpine landscapes, and seasonal flowers.</li>
+              <li>Optional visit to Zero Point at an additional cost, subject to permits and weather conditions.</li>
+              <li>Return to Gangtok.</li>
+              <li>Overnight stay in Gangtok.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Gangtok to Bagdogra / NJP – Departure</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Check out and transfer to Bagdogra Airport or New Jalpaiguri Railway Station.</li>
+              <li>Continue your onward journey with wonderful memories of Sikkim.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Sikkim – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-madhya-pradesh-5n" aria-labelledby="pk-madhya-pradesh-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-madhya-pradesh-5n-title">Madhya Pradesh itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Khajuraho, Orchha, Gwalior &amp; Bhopal</p>
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Bhopal – Local Sightseeing</h4>
+            <ul>
+              <li>Arrive at Bhopal Airport or Railway Station.</li>
+              <li>Transfer to the hotel and check in.</li>
+              <li>Visit Upper Lake and Lower Lake.</li>
+              <li>Explore Van Vihar National Park, subject to opening hours.</li>
+              <li>Visit New Market for shopping and leisure.</li>
+              <li>Overnight stay in Bhopal.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Bhopal – Sanchi – Bhopal</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Proceed for an excursion to Sanchi Stupa, a UNESCO World Heritage Site.</li>
+              <li>Explore the Buddhist monuments and the Sanchi Archaeological Museum, subject to opening hours.</li>
+              <li>Return to Bhopal.</li>
+              <li>Overnight stay in Bhopal.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Bhopal to Khajuraho</h4>
+            <ul>
+              <li>Breakfast and check out from the hotel.</li>
+              <li>Transfer to Khajuraho by road or train, depending on the package arrangement.</li>
+              <li>Arrive and check in to the hotel.</li>
+              <li>Visit the Western Group of Temples, famous for their intricate sculptures and architecture.</li>
+              <li>Enjoy the evening sound-and-light show, if operating.</li>
+              <li>Overnight stay in Khajuraho.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Khajuraho to Orchha</h4>
+            <ul>
+              <li>Breakfast and check out.</li>
+              <li>Visit the Eastern Group of Temples, depending on available time.</li>
+              <li>Proceed to Orchha.</li>
+              <li>Visit Orchha Fort Complex, Raja Mahal, Jahangir Mahal, and the beautiful riverside cenotaphs.</li>
+              <li>Enjoy the scenic surroundings of the Betwa River.</li>
+              <li>Overnight stay in Orchha.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Orchha to Gwalior</h4>
+            <ul>
+              <li>Breakfast and check out.</li>
+              <li>Proceed to Gwalior.</li>
+              <li>Visit the magnificent Gwalior Fort, known for its historical significance and architecture.</li>
+              <li>Explore Man Singh Palace and Sas Bahu Temples.</li>
+              <li>Visit Jai Vilas Palace and Museum, subject to opening hours.</li>
+              <li>Overnight stay in Gwalior.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Gwalior Departure</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Check out and transfer to Gwalior Airport or Railway Station for your onward journey.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Madhya Pradesh – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
+    <dialog class="vc-dialog" id="pk-maharashtra-5n" aria-labelledby="pk-maharashtra-5n-title">
+      <div class="vc-dialog__panel">
+        <header class="vc-dialog__head">
+          <div>
+            <p class="eyebrow">5 Nights / 6 Days</p>
+            <h3 id="pk-maharashtra-5n-title">Maharashtra itinerary</h3>
+          </div>
+          <button class="vc-dialog__close" type="button" data-checklist-close aria-label="Close itinerary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        </header>
+        <div class="vc-dialog__body">
+          <p class="vc-dialog__intro">Mumbai, Lonavala, Pune &amp; Mahabaleshwar</p>
+          <h4 class="pk-heading">Day-wise itinerary</h4>
+          <section class="vc-dialog__section">
+            <h4>Day 1 – Arrival in Mumbai – Local Sightseeing</h4>
+            <ul>
+              <li>Arrive at Mumbai Airport or Railway Station.</li>
+              <li>Transfer to the hotel and check in.</li>
+              <li>Visit the iconic Gateway of India.</li>
+              <li>Explore Marine Drive and enjoy views of the Arabian Sea.</li>
+              <li>Visit Chhatrapati Shivaji Maharaj Terminus from the outside and enjoy local shopping, depending on time.</li>
+              <li>Overnight stay in Mumbai.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 2 – Mumbai Sightseeing – Transfer to Lonavala</h4>
+            <ul>
+              <li>Breakfast at the hotel and check out.</li>
+              <li>Visit Shree Siddhivinayak Temple and the Bandra-Worli Sea Link viewpoint, subject to time.</li>
+              <li>Proceed to Lonavala by road.</li>
+              <li>Enjoy the scenic Western Ghats and visit Lonavala Lake or local viewpoints, depending on the season.</li>
+              <li>Overnight stay in Lonavala.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 3 – Lonavala Sightseeing – Transfer to Pune</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Visit Tiger Point and Lion&#x27;s Point for panoramic valley views.</li>
+              <li>Explore Bhushi Dam, subject to seasonal access and local conditions.</li>
+              <li>Visit Karla Caves or Bhaja Caves, depending on available time.</li>
+              <li>Proceed to Pune and check in to the hotel.</li>
+              <li>Overnight stay in Pune.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 4 – Pune Sightseeing – Transfer to Mahabaleshwar</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Visit Shaniwar Wada and Dagdusheth Halwai Ganpati Temple.</li>
+              <li>Explore Aga Khan Palace, subject to opening hours.</li>
+              <li>Proceed to Mahabaleshwar.</li>
+              <li>Check in to the hotel and relax.</li>
+              <li>Overnight stay in Mahabaleshwar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 5 – Mahabaleshwar and Panchgani Sightseeing</h4>
+            <ul>
+              <li>Breakfast at the hotel.</li>
+              <li>Visit Arthur&#x27;s Seat, Kate&#x27;s Point, and Elephant&#x27;s Head Point.</li>
+              <li>Explore Venna Lake, with optional boating subject to availability.</li>
+              <li>Visit Mapro Garden and enjoy local strawberry products when available.</li>
+              <li>Explore Table Land in Panchgani and enjoy the scenic mountain views.</li>
+              <li>Overnight stay in Mahabaleshwar.</li>
+            </ul>
+          </section>
+          <section class="vc-dialog__section">
+            <h4>Day 6 – Departure</h4>
+            <ul>
+              <li>Breakfast at the hotel and check out.</li>
+              <li>Transfer to Pune or Mumbai Airport/Railway Station, depending on your departure arrangements.</li>
+              <li>Continue your onward journey with wonderful memories of Maharashtra.</li>
+            </ul>
+          </section>
+          <p class="vc-dialog__note">Attractions, activities and timings are subject to availability, opening hours, weather, road conditions and the package inclusions. Prices and inclusions are not listed here, so please send an enquiry for details.</p>
+        </div>
+        <footer class="vc-dialog__foot">
+          <button class="btn btn--primary" type="button" data-prefill="Maharashtra – 5 Nights / 6 Days" data-prefill-target="enq-destination" data-checklist-close>Enquire about this package</button>
+          <button class="btn btn--secondary" type="button" data-checklist-close>Close</button>
+        </footer>
+      </div>
+    </dialog>
     </section>
+    <!-- Tour packages END -->
 
     <section class="section" id="enquiry" aria-labelledby="enquiry-title">
       <div class="container enquiry">
