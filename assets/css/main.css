@@ -443,6 +443,7 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .pos-pagoda { object-position: 60% 45%; }
 .pos-flame { object-position: 50% 45%; }
 .pos-govhouse { object-position: 50% 28%; }
+.pos-coastroad { object-position: 50% 55%; }
 .pos-gate { object-position: 50% 27%; }
 .pos-statue { object-position: 50% 22%; }
 .pos-isle { object-position: 62% 60%; }
