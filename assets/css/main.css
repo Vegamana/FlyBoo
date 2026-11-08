@@ -576,8 +576,10 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .page-banner__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block; filter: brightness(1.12) saturate(1.1); }
 .page-banner__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgb(29 58 87 / 48%), rgb(29 58 87 / 24%) 55%, rgb(29 58 87 / 6%)); }
 .page-banner--photo > .container { position: relative; z-index: 1; }
-.page-banner--photo h1, .page-banner--photo p { color: #fff1dc; /* warm cream, echoes the sunrise light on the peaks */ text-shadow: 0 1px 3px rgb(29 58 87 / 60%), 0 2px 18px rgb(29 58 87 / 55%); }
-.page-banner--photo .breadcrumb ol, .page-banner--photo .breadcrumb a, .page-banner--photo .breadcrumb [aria-current="page"] { color: #fff1dc; }
+.page-banner--photo h1 { color: var(--color-orange); }
+.page-banner--photo p { color: #fff1dc; }
+.page-banner--photo h1, .page-banner--photo p { text-shadow: 0 1px 3px rgb(29 58 87 / 60%), 0 2px 18px rgb(29 58 87 / 55%); }
+.page-banner--photo .breadcrumb ol, .page-banner--photo .breadcrumb a, .page-banner--photo .breadcrumb [aria-current="page"] { color: var(--color-orange); }
 .page-banner--photo .breadcrumb li + li::before { color: rgb(255 241 220 / 70%); }
 
 .breadcrumb { margin: 0 0 var(--space-4); font-size: var(--font-size-sm); }
