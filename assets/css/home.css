@@ -6,7 +6,7 @@
 
 /* Hero: the photograph, shown in full ---------------------------------------------- */
 .home-hero { position: relative; background: var(--color-sky); }
-.home-hero img { display: block; width: 100%; height: auto; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; object-position: 58% 30%; }
+.home-hero img { display: block; width: 100%; height: auto; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; object-position: 55% 40%; }
 @media (min-width: 40em) { .home-hero img { aspect-ratio: 2000 / 924; } }
 .home-cta :focus-visible { outline-color: var(--color-white); }
 
