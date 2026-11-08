@@ -437,6 +437,7 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .pos-mid { object-position: 50% 52%; }
 .pos-peak { object-position: 50% 45%; }
 .pos-swing { object-position: 50% 58%; }
+.pos-jungle-swing { object-position: 50% 55%; }
 .pos-gate { object-position: 50% 27%; }
 .pos-statue { object-position: 50% 22%; }
 .pos-isle { object-position: 62% 60%; }
