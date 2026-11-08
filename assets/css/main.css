@@ -570,6 +570,16 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .page-banner p { margin: 0; max-width: 40rem; color: var(--color-text-secondary); font-size: var(--font-size-md); }
 @media (min-width: 64em) { .page-banner { padding-block: var(--space-8); } }
 
+/* Photo banner: image behind the heading, navy overlay keeps the white text readable */
+.page-banner--photo { position: relative; overflow: hidden; color: var(--color-white); background: var(--color-blue-text); border-bottom: 0; }
+.page-banner__bg { position: absolute; inset: 0; z-index: 0; }
+.page-banner__bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block; }
+.page-banner__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgb(29 58 87 / 78%), rgb(29 58 87 / 55%) 60%, rgb(29 58 87 / 35%)); }
+.page-banner--photo > .container { position: relative; z-index: 1; }
+.page-banner--photo h1, .page-banner--photo p { color: var(--color-white); text-shadow: 0 1px 10px rgb(29 58 87 / 45%); }
+.page-banner--photo .breadcrumb ol, .page-banner--photo .breadcrumb a, .page-banner--photo .breadcrumb [aria-current="page"] { color: var(--color-white); }
+.page-banner--photo .breadcrumb li + li::before { color: rgb(255 255 255 / 70%); }
+
 .breadcrumb { margin: 0 0 var(--space-4); font-size: var(--font-size-sm); }
 .breadcrumb ol { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); margin: 0; padding: 0; list-style: none; color: var(--color-text-secondary); }
 .breadcrumb li + li::before { content: "/"; margin-right: var(--space-2); color: var(--color-control-border); }
