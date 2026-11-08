@@ -7,11 +7,12 @@
   <meta name="description" content="Enquire about international tours with FLYBOO.COM.">
   <meta name="theme-color" content="#ffffff">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20261108b">
-  <link rel="stylesheet" href="assets/css/main.css?v=20261108b">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261108b">
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261108c">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261108c">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261108c">
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/enquiry.js" defer></script>
+  <script src="assets/js/gallery.js" defer></script>
   <script src="assets/js/checklists.js" defer></script>
   <script src="assets/js/packages.js" defer></script>
 </head>
@@ -179,7 +180,12 @@
           </li>
           <li data-group="Thailand">
             <article class="card dest-card">
-              <div class="card__media"><img src="assets/img/destinations/thailand-boat-900.jpg" width="900" height="600" alt="Longtail boat on a turquoise lake between misty limestone cliffs in Thailand" loading="lazy" decoding="async"></div>
+              <div class="card__media"><div class="gallery" role="group" aria-roledescription="carousel" aria-label="Phuket and Krabi photos">
+                <ul class="gallery__track" tabindex="0" aria-label="Phuket and Krabi photos, scroll sideways to see more">
+                  <li><img src="assets/img/destinations/krabi-beach-900.jpg" width="900" height="652" alt="Aerial view of a curved sandy beach with long-tail boats, turquoise water and tall limestone cliffs in Krabi, Thailand" loading="lazy" decoding="async"></li>
+                  <li><img src="assets/img/destinations/phuket-cove-900.jpg" width="900" height="682" alt="A long-tail boat in clear turquoise water between steep green limestone cliffs in Thailand" loading="lazy" decoding="async"></li>
+                </ul>
+              </div></div>
               <div class="card__body">
                 <h3 class="card__title">Thailand: Phuket &amp; Krabi</h3>
                 <p class="card__meta">4 Nights / 5 Days</p>
