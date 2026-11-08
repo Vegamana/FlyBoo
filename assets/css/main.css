@@ -439,6 +439,7 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .pos-swing { object-position: 50% 58%; }
 .pos-jungle-swing { object-position: 50% 55%; }
 .pos-bali-temple { object-position: 35% 55%; }
+.pos-fuji { object-position: 50% 68%; }
 .pos-gate { object-position: 50% 27%; }
 .pos-statue { object-position: 50% 22%; }
 .pos-isle { object-position: 62% 60%; }
