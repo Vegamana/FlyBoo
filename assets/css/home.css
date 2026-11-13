@@ -96,6 +96,48 @@
   .dest-ctl { grid-column: 1; grid-row: 2; justify-self: end; }
   .dest-note { grid-column: 1; grid-row: 3; }
 }
+/* Testimonials: same 8 / 16 / 24 / 32 / 64 scale as Destinations */
+.testi-section { padding-block: var(--space-8); }
+.testi-section .home-head { max-width: 46rem; margin-bottom: var(--space-6); }
+.testi-section .home-head h2 { margin-bottom: var(--space-3); }
+.testi-carousel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-5); row-gap: var(--space-5); }
+.testi-track { grid-column: 1 / -1; list-style: none; margin: 0; padding: var(--space-2) 0 var(--space-3); display: flex; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.testi-track::-webkit-scrollbar { display: none; }
+.testi-track:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 4px; }
+.testi { flex: 0 0 100%; margin: 0; display: flex; scroll-snap-align: start; }
+@media (min-width: 40em) { .testi { flex-basis: calc((100% - var(--space-4)) / 2); } }
+@media (min-width: 64em) { .testi { flex-basis: calc((100% - 2 * var(--space-4)) / 3); } }
+.testi__card { position: relative; display: flex; flex-direction: column; width: 100%; margin: 0; padding: var(--space-5); background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.testi__card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.testi__rating { display: flex; gap: 2px; margin: 0 0 var(--space-4); color: var(--color-orange); }
+.testi__rating svg { width: 1.125rem; height: 1.125rem; fill: currentColor; }
+.testi__quote { flex: 1 1 auto; margin: 0 0 var(--space-5); padding: 0; border: 0; }
+.testi__quote p { margin: 0; font-size: var(--font-size-md); line-height: 1.6; color: var(--color-navy); }
+.testi__who { display: flex; align-items: center; gap: var(--space-3); padding-top: var(--space-4); border-top: 1px solid var(--color-border); }
+.testi__avatar { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; background: var(--color-blue-text); color: var(--color-white); font-family: var(--font-display); font-size: 0.9375rem; font-weight: 600; letter-spacing: 0.02em; }
+.testi__id { display: flex; flex-direction: column; min-width: 0; }
+.testi__name { font-family: var(--font-display); font-weight: 600; line-height: 1.25; color: var(--color-navy); }
+.testi__meta { font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.testi__dest { margin: var(--space-3) 0 0; font-size: var(--font-size-sm); font-weight: 700; color: var(--color-blue-text); }
+.testi__tag { margin: var(--space-3) 0 0; font-size: var(--font-size-sm); font-style: italic; color: var(--color-text-secondary); }
+.testi-notice { grid-column: 1; grid-row: 3; margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.testi-ctl { grid-column: 1 / -1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.testi-dots { display: flex; gap: 0; }
+.testi-dots__dot { position: relative; width: 1.75rem; height: 2.75rem; padding: 0; border: 0; background: none; cursor: pointer; }
+.testi-dots__dot::after { content: ""; position: absolute; top: 50%; left: 50%; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--color-control-border); transform: translate(-50%, -50%); transition: background 0.2s ease, width 0.2s ease; }
+.testi-dots__dot[aria-current="true"]::after { width: 1.5rem; border-radius: 0.3125rem; background: var(--color-orange); }
+.testi-dots__dot:focus-visible { outline: 3px solid var(--color-blue); outline-offset: -2px; }
+.testi-btns { display: flex; gap: var(--space-2); }
+.testi-btns__btn { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--color-control-border); border-radius: var(--radius-sm); background: var(--color-white); color: var(--color-navy); cursor: pointer; }
+.testi-btns__btn:hover { border-color: var(--color-orange); color: var(--color-orange); }
+.testi-btns__btn:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+.testi-btns__btn svg { width: 1.25rem; height: 1.25rem; }
+@media (max-width: 39.99em) {
+  .testi-section { padding-block: var(--space-7); }
+  .testi-carousel { row-gap: var(--space-4); }
+}
+@media (prefers-reduced-motion: reduce) { .testi__card, .testi__card:hover { transition: none; transform: none; } .testi-dots__dot::after { transition: none; } }
+
 .home-note { margin: var(--space-6) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 
 /* The FLYBOO difference ---------------------------------------------------------------- */
