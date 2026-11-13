@@ -66,23 +66,23 @@
 .index-row:focus-visible { outline-offset: -3px; }
 
 /* Destinations --------------------------------------------------------------------- */
-.dest-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-5) var(--space-4); }
-.dest { margin: 0; }
+.dest-carousel { position: relative; }
+.dest-track { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.dest { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
+@media (min-width: 40em) { .dest { flex-basis: calc((100% - var(--space-4)) / 2); } }
+@media (min-width: 64em) { .dest { flex-basis: calc((100% - 2 * var(--space-4)) / 3); } }
 .dest a { display: block; text-decoration: none; color: var(--color-navy); }
-.dest__media { overflow: hidden; background: var(--color-navy); }
+.dest__media { overflow: hidden; background: var(--color-navy); aspect-ratio: 3 / 2; }
 .dest__media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .dest a:hover img { transform: scale(1.03); }
 .dest__name { margin: var(--space-3) 0 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
 .dest a:hover .dest__name { color: var(--color-blue-text); }
-.dest__meta { margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
-.dest--feature .dest__media { aspect-ratio: 4 / 3; }
-.dest:not(.dest--feature) .dest__media { aspect-ratio: 3 / 2; }
-.dest--feature .dest__name { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
-@media (min-width: 48em) {
-  .dest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .dest--feature { grid-column: 1 / -1; }
-  .dest--feature .dest__media { aspect-ratio: 21 / 9; }
-}
+.dest__meta { margin: 0 0 var(--space-2); font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.dest-ctl { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-4); }
+.dest-ctl__btn { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--color-control-border); border-radius: var(--radius-sm, 4px); background: var(--color-white); color: var(--color-navy); cursor: pointer; }
+.dest-ctl__btn:hover:not(:disabled) { border-color: var(--color-orange); color: var(--color-orange); }
+.dest-ctl__btn:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+.dest-ctl__btn svg { width: 1.25rem; height: 1.25rem; }
 .home-note { margin: var(--space-6) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 
 /* The FLYBOO difference ---------------------------------------------------------------- */
