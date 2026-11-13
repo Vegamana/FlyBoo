@@ -26,7 +26,7 @@ The home page must stay named `index.html`.
 | Path | What it is |
 |---|---|
 | `index.html` | Home (hero only for now) |
-| `domestic-tours.html`, `international-tours.html`, `flights.html`, `forex.html` | Placeholder pages |
+| `domestic-tours.html`, `international-tours.html`, `flights.html` | Placeholder pages |
 | `travel-visa.html` | Travel Visa page |
 | `styleguide.html` | Design review page, not linked from the site. Safe to delete. |
 | `assets/css/tokens.css` | All brand colours, spacing and type sizes in one place |
