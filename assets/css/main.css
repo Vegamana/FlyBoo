@@ -532,6 +532,11 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 
 .footer__grid { display: grid; gap: var(--space-7); padding-bottom: var(--space-8); }
 @media (min-width: 48em) { .footer__grid { grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-9); align-items: start; } }
+@media (min-width: 48em) { .footer__contact { grid-column: 1 / -1; } }
+@media (min-width: 64em) { .footer__grid { grid-template-columns: minmax(0, 1fr) auto auto; column-gap: var(--space-8); } .footer__contact { grid-column: auto; } }
+.footer__links.footer__links--stack { display: grid; grid-template-columns: none; grid-template-rows: none; grid-auto-flow: row; gap: 0; }
+.footer__links--stack li { display: flex; align-items: center; gap: var(--space-3); }
+.footer__label { flex: 0 0 5.5rem; font-size: var(--font-size-sm); color: var(--color-on-navy-muted); }
 
 .footer__logo { display: inline-block; padding: var(--space-3) var(--space-4); background: var(--color-white); border-radius: var(--radius-md); }
 .footer__logo img { display: block; height: 2.5rem; width: auto; max-width: none; }
