@@ -66,8 +66,14 @@
 .index-row:focus-visible { outline-offset: -3px; }
 
 /* Destinations --------------------------------------------------------------------- */
-.dest-carousel { position: relative; }
-.dest-track { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+/* Destinations: one spacing scale (8 / 16 / 24 / 32 / 64) and one left edge for heading, cards and note */
+.dest-section { padding-block: var(--space-8); }
+.dest-section .home-head { max-width: none; margin-bottom: var(--space-6); }
+.dest-section .home-head h2 { margin: 0; }
+.dest-carousel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-5); row-gap: var(--space-5); }
+.dest-track { grid-column: 1 / -1; list-style: none; margin: 0; padding: 0; display: flex; gap: var(--space-4); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.dest-track::-webkit-scrollbar { display: none; }
+.dest-track:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 4px; }
 .dest { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
 @media (min-width: 40em) { .dest { flex-basis: calc((100% - var(--space-4)) / 2); } }
 @media (min-width: 64em) { .dest { flex-basis: calc((100% - 2 * var(--space-4)) / 3); } }
@@ -75,14 +81,21 @@
 .dest__media { overflow: hidden; background: var(--color-navy); aspect-ratio: 3 / 2; }
 .dest__media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .dest a:hover img { transform: scale(1.03); }
-.dest__name { margin: var(--space-3) 0 0; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
+.dest__name { margin: var(--space-3) 0 var(--space-1); font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
 .dest a:hover .dest__name { color: var(--color-blue-text); }
-.dest__meta { margin: 0 0 var(--space-2); font-size: var(--font-size-sm); color: var(--color-text-secondary); }
-.dest-ctl { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-4); }
+.dest__meta { margin: 0; font-size: var(--font-size-sm); line-height: 1.4; color: var(--color-text-secondary); }
+.dest-note { grid-column: 1; grid-row: 2; margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.dest-ctl { grid-column: 2; grid-row: 2; display: flex; gap: var(--space-2); }
 .dest-ctl__btn { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--color-control-border); border-radius: var(--radius-sm, 4px); background: var(--color-white); color: var(--color-navy); cursor: pointer; }
 .dest-ctl__btn:hover:not(:disabled) { border-color: var(--color-orange); color: var(--color-orange); }
 .dest-ctl__btn:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
 .dest-ctl__btn svg { width: 1.25rem; height: 1.25rem; }
+@media (max-width: 39.99em) {
+  .dest-section { padding-block: var(--space-7); }
+  .dest-carousel { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-4); }
+  .dest-ctl { grid-column: 1; grid-row: 2; justify-self: end; }
+  .dest-note { grid-column: 1; grid-row: 3; }
+}
 .home-note { margin: var(--space-6) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 
 /* The FLYBOO difference ---------------------------------------------------------------- */
