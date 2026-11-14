@@ -9,7 +9,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261028b">
   <link rel="stylesheet" href="assets/css/main.css?v=20261115a">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261115e">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261115g">
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/enquiry.js" defer></script>
   <script src="assets/js/flights.js" defer></script>
@@ -68,6 +68,7 @@
             <label class="fs-pill"><input type="radio" name="tripType" value="Multi city"><span>Multi City</span></label>
           </fieldset>
 
+          <p class="fs-leg" id="fs-leg1" hidden>Flight 1</p>
           <div class="fs-bar">
             <div class="fs-cell fs-cell--from">
               <label for="fs-from">From <span class="req" aria-hidden="true">*</span></label>
@@ -106,6 +107,28 @@
                 <option>Business</option>
                 <option>First</option>
               </select>
+            </div>
+          </div>
+
+          <div class="fs-leg2" id="fs-leg2" hidden>
+            <p class="fs-leg">Flight 2</p>
+            <div class="fs-bar fs-bar--leg2">
+              <div class="fs-cell fs-cell--from">
+                <label for="fs-from2">From <span class="visually-hidden">(flight 2)</span> <span class="req" aria-hidden="true">*</span></label>
+                <input class="fs-input" id="fs-from2" name="from2" data-label="Flight 2 from" type="text" disabled placeholder="City or airport" autocomplete="off" aria-describedby="fs-from2-error">
+                <span class="error" id="fs-from2-error" hidden></span>
+              </div>
+              <button class="fs-swap" id="fs-swap2" type="button" aria-label="Swap From and To for flight 2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg></button>
+              <div class="fs-cell fs-cell--to">
+                <label for="fs-to2">To <span class="visually-hidden">(flight 2)</span> <span class="req" aria-hidden="true">*</span></label>
+                <input class="fs-input" id="fs-to2" name="to2" data-label="Flight 2 to" type="text" disabled placeholder="City or airport" autocomplete="off" aria-describedby="fs-to2-error">
+                <span class="error" id="fs-to2-error" hidden></span>
+              </div>
+              <div class="fs-cell">
+                <label for="fs-depart2">Departure <span class="visually-hidden">(flight 2)</span> <span class="req" aria-hidden="true">*</span></label>
+                <input class="fs-input" id="fs-depart2" name="departDate2" data-label="Flight 2 departure" type="date" disabled aria-describedby="fs-depart2-error">
+                <span class="error" id="fs-depart2-error" hidden></span>
+              </div>
             </div>
           </div>
 

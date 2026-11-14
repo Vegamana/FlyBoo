@@ -140,3 +140,18 @@
 .fs-contact .fs-cell, .fs-contact .fs-cell + .fs-cell, .fs-contact .fs-cell--wide { border: 1px solid var(--color-control-border); border-radius: var(--radius-md); background: var(--color-white); }
 .fs-contact .fs-cell:hover { border-color: var(--color-blue); }
 .fs-contact .fs-cell:focus-within { background: #f3f8fd; border-color: var(--color-blue); }
+
+/* Multi City: a second From / To / Departure row */
+.fs-leg { margin: 0 0 var(--space-2); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-blue-text); }
+.fs-leg2 { margin-top: var(--space-4); }
+.fs-leg2[hidden], .fs-leg[hidden] { display: none; }
+.fs-bar--leg2 { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 40em) {
+  .fs-bar--leg2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fs-bar--leg2 .fs-cell:nth-of-type(3) { grid-column: 1 / -1; border-left: 0; }
+}
+@media (min-width: 64em) {
+  .fs-bar--leg2 { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.4fr) minmax(0, 1fr); width: calc(100% * 3.8 / 6.6); }
+  .fs-bar--leg2 .fs-cell:nth-of-type(3) { grid-column: auto; border-left: 1px solid var(--color-border); }
+  .fs-bar--leg2 .fs-swap { left: calc(100% * 1.4 / 3.8 - 1.25rem); }
+}

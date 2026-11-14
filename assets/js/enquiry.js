@@ -26,6 +26,7 @@
     if (e) { e.textContent = msg; e.hidden = false; }
   }
   function labelFor(form, f) {
+    if (f.getAttribute('data-label')) return f.getAttribute('data-label');
     var l = form.querySelector('label[for="' + f.id + '"]');
     return l ? l.firstChild.textContent.trim() : f.name;
   }
@@ -58,6 +59,10 @@
       var dep = form.querySelector('[name="departDate"]'), ret = form.querySelector('[name="returnDate"]');
       if (dep && ret && dep.value && ret.value && ret.value < dep.value && !problems.some(function (p) { return p.field === ret; })) {
         problems.push({ field: ret, msg: 'Return date must be after the departure date.' });
+      }
+      var dep2 = form.querySelector('[name="departDate2"]');
+      if (dep && dep2 && !dep2.disabled && dep.value && dep2.value && dep2.value < dep.value && !problems.some(function (p) { return p.field === dep2; })) {
+        problems.push({ field: dep2, msg: 'Flight 2 must be on or after the first departure date.' });
       }
       return problems;
     }
