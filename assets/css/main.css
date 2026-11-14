@@ -542,6 +542,7 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .footer__icon--instagram { stroke: url(#ig-grad); }
 .footer__icon--facebook { color: #1877f2; }
 .footer__icon--youtube { color: #ff0000; }
+.footer__contact:focus { outline: none; }
 
 .footer__logo { display: inline-block; padding: var(--space-3) var(--space-4); background: var(--color-white); border-radius: var(--radius-md); }
 .footer__logo img { display: block; height: 2.5rem; width: auto; max-width: none; }
