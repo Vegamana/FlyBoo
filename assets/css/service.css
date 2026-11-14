@@ -47,3 +47,4 @@
 .contact__icon--facebook { color: #1877f2; }
 .contact__icon--youtube { color: #ff0000; }
 .contact__note { margin: var(--space-5) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

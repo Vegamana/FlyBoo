@@ -1,7 +1,9 @@
 /* FLYBOO.COM — shared enquiry form behaviour (service pages).
    Any <form data-enquiry> gets validation and an honest submit state.
    ENQUIRY_ENDPOINT: URL that accepts a JSON POST of the enquiry. While it is empty,
-   the form validates but says plainly that nothing has been sent. */
+   the form validates but says plainly that nothing has been sent.
+   A form can set its own data-endpoint (the Contact form emails flyboocs@gmail.com through FormSubmit).
+   Its hidden "_honey" field is a spam trap: real visitors never fill it in. */
 (function () {
   var ENQUIRY_ENDPOINT = '';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -97,8 +99,10 @@
 
       var payload = { enquiryType: kind };
       fields.forEach(function (f) { if (f.name) payload[f.name] = f.value.trim(); });
+      var endpoint = form.getAttribute('data-endpoint') || ENQUIRY_ENDPOINT;
+      if (form.getAttribute('data-subject')) payload._subject = form.getAttribute('data-subject');
 
-      if (!ENQUIRY_ENDPOINT) {
+      if (!endpoint) {
         showMessage('notice', 'Your details look complete, but nothing has been sent',
           el('p', null, 'Online enquiries are not switched on yet, so this form has not delivered your request. Your entries are still on the page.'));
         return;
@@ -108,12 +112,15 @@
       submit.setAttribute('aria-disabled', 'true');
       var old = submit.textContent;
       submit.textContent = 'Sending…';
-      fetch(ENQUIRY_ENDPOINT, {
+      fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json().catch(function () { return {}; });
+      }).then(function (data) {
+        if (data && (data.success === false || data.success === 'false')) throw new Error('Not accepted');
         form.reset();
         showMessage('success', 'Your enquiry has been submitted', el('p', null, 'Thank you. Our team will review your enquiry.'));
       }).catch(function () {

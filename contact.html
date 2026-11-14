@@ -9,7 +9,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261028b">
   <link rel="stylesheet" href="assets/css/main.css?v=20261114g">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261114a">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261114b">
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/enquiry.js" defer></script>
 </head>
@@ -69,19 +69,23 @@
           </ul>
           <p class="contact__note">Please don&rsquo;t send passport copies, card details or other sensitive information through this form.</p>
         </div>
-        <form class="search-panel" id="contact-form" data-enquiry="contact" novalidate>
+        <form class="search-panel" id="contact-form" data-enquiry="contact" data-endpoint="https://formsubmit.co/ajax/flyboocs@gmail.com" data-subject="New message from the FLYBOO.COM contact form" novalidate>
           <noscript><p class="form-message form-message--notice">This form needs JavaScript to work. Please enable it and reload the page, or contact us by phone or email.</p></noscript>
           <div class="form-message" tabindex="-1" hidden></div>
           <p class="form-privacy form-privacy--first"><span class="req" aria-hidden="true">*</span> Required field</p>
           <div class="form-grid">
+            <div class="field hp" aria-hidden="true">
+              <label for="enq-honey">Leave this field empty</label>
+              <input class="input" id="enq-honey" name="_honey" type="text" tabindex="-1" autocomplete="off">
+            </div>
             <div class="field">
               <label for="enq-name">Full name <span class="req" aria-hidden="true">*</span></label>
-              <input class="input" id="enq-name" name="enq-name" type="text" required aria-describedby="enq-name-error" autocomplete="name">
+              <input class="input" id="enq-name" name="name" type="text" required aria-describedby="enq-name-error" autocomplete="name">
               <span class="error" id="enq-name-error" hidden></span>
             </div>
             <div class="field">
               <label for="enq-email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input class="input" id="enq-email" name="enq-email" type="email" required aria-describedby="enq-email-error" autocomplete="email">
+              <input class="input" id="enq-email" name="email" type="email" required aria-describedby="enq-email-error" autocomplete="email">
               <span class="error" id="enq-email-error" hidden></span>
             </div>
             <div class="field">
@@ -111,6 +115,7 @@
           <div class="form-actions">
             <button class="btn btn--primary btn--lg" type="submit">Send Message</button>
           </div>
+          <p class="form-privacy">Your message is emailed to our team through a third-party form service.</p>
         </form>
       </div>
     </section>
