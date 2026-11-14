@@ -140,9 +140,11 @@
 .home-note { margin: var(--space-6) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 
 /* The FLYBOO difference ---------------------------------------------------------------- */
-.difference { display: grid; gap: var(--space-7); }
-@media (min-width: 64em) { .difference { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-9); align-items: start; } }
-.difference h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem); color: var(--color-navy); }
+.difference-section { padding-block: var(--space-8); }
+.difference { display: grid; gap: var(--space-6); }
+@media (min-width: 64em) { .difference { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); align-items: start; } }
+.difference h2 { margin: 0; font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem); color: var(--color-navy); }
+@media (max-width: 39.99em) { .difference-section { padding-block: var(--space-7); } }
 .points { list-style: none; margin: 0; padding: 0; counter-reset: pt; border-top: 1px solid var(--color-border); }
 .points li { position: relative; padding: var(--space-5) 0 var(--space-5) 3rem; border-bottom: 1px solid var(--color-border); counter-increment: pt; }
 .points li::before { content: counter(pt, decimal-leading-zero); position: absolute; left: 0; top: var(--space-5); font-size: var(--font-size-sm); font-weight: 600; color: var(--color-text-secondary); }
