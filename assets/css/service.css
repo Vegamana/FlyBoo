@@ -36,3 +36,14 @@
 .vc-grid > li[hidden] { display: none; }
 .pk-heading { margin: 0 0 var(--space-3); font-size: var(--font-size-md); color: var(--color-navy); }
 .vc-grid .card__meta { font-weight: 700; color: var(--color-text-secondary); }
+
+/* Contact page ------------------------------------------------------------------------- */
+.contact-list { list-style: none; margin: var(--space-5) 0 0; padding: 0; border-top: 1px solid var(--color-border); }
+.contact-list li { display: flex; align-items: center; gap: var(--space-3); min-height: 3.5rem; border-bottom: 1px solid var(--color-border); }
+.contact-list a { color: var(--color-navy); font-weight: 700; }
+.contact__label { flex: 0 0 5.5rem; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+.contact__icon { flex: none; box-sizing: border-box; width: 2rem; height: 2rem; padding: 0.375rem; border-radius: var(--radius-sm); background: var(--color-sky); color: var(--color-blue-text); }
+.contact__icon--instagram { stroke: url(#ig-grad-c); }
+.contact__icon--facebook { color: #1877f2; }
+.contact__icon--youtube { color: #ff0000; }
+.contact__note { margin: var(--space-5) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
