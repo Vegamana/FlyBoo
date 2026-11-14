@@ -98,7 +98,10 @@
       }
 
       var payload = { enquiryType: kind };
-      fields.forEach(function (f) { if (f.name) payload[f.name] = f.value.trim(); });
+      fields.forEach(function (f) {
+        if (!f.name || ((f.type === 'radio' || f.type === 'checkbox') && !f.checked)) return;
+        payload[f.name] = f.value.trim();
+      });
       var endpoint = form.getAttribute('data-endpoint') || ENQUIRY_ENDPOINT;
       if (form.getAttribute('data-subject')) payload._subject = form.getAttribute('data-subject');
 

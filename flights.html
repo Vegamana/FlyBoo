@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flights — FLYBOO.COM</title>
-  <meta name="description" content="Ask FLYBOO.COM about flights.">
+  <meta name="description" content="Send a flight enquiry to FLYBOO.COM.">
   <meta name="theme-color" content="#ffffff">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261028b">
   <link rel="stylesheet" href="assets/css/main.css?v=20261115a">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261114b">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261115b">
   <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/enquiry.js" defer></script>
+  <script src="assets/js/flights.js" defer></script>
 </head>
 <body>
 <div class="page-shell">
@@ -48,7 +50,95 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="flights.html" aria-current="page">Flights</a></li></ol></nav>
         <h1 id="page-title">Tell us where you&rsquo;re flying.</h1>
-        <p>We don&rsquo;t show live fares here. To ask about flights, <a href="contact.html">contact our team</a>, and nothing is booked until we confirm the details with you.</p>
+        <p>Enter your trip below and our team will reply with options. We don&rsquo;t search or show live fares here, and nothing is booked until we confirm the details with you.</p>
+      </div>
+    </section>
+
+    <section class="section" id="enquiry" aria-labelledby="fs-title">
+      <div class="container">
+        <h2 id="fs-title" class="visually-hidden">Flight enquiry</h2>
+        <form class="flight-search" id="flights-form" data-enquiry="flights" data-endpoint="https://formsubmit.co/ajax/flyboocs@gmail.com" data-subject="New flight enquiry from FLYBOO.COM" novalidate>
+          <noscript><p class="form-message form-message--notice">This form needs JavaScript to work. Please enable it and reload the page, or contact us by phone or email.</p></noscript>
+          <div class="form-message" tabindex="-1" hidden></div>
+
+          <fieldset class="fs-trip">
+            <legend class="visually-hidden">Trip type</legend>
+            <label class="fs-pill"><input type="radio" name="tripType" value="One way" checked><span>One Way</span></label>
+            <label class="fs-pill"><input type="radio" name="tripType" value="Round trip"><span>Round Trip</span></label>
+            <label class="fs-pill"><input type="radio" name="tripType" value="Multi city"><span>Multi City</span></label>
+          </fieldset>
+
+          <div class="fs-bar">
+            <div class="fs-cell fs-cell--from">
+              <label for="fs-from">From <span class="req" aria-hidden="true">*</span></label>
+              <input class="fs-input" id="fs-from" name="from" type="text" required placeholder="City or airport" autocomplete="off" aria-describedby="fs-from-error">
+              <span class="error" id="fs-from-error" hidden></span>
+            </div>
+            <button class="fs-swap" id="fs-swap" type="button" aria-label="Swap From and To">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 4L3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg>
+            </button>
+            <div class="fs-cell fs-cell--to">
+              <label for="fs-to">To <span class="req" aria-hidden="true">*</span></label>
+              <input class="fs-input" id="fs-to" name="to" type="text" required placeholder="City or airport" autocomplete="off" aria-describedby="fs-to-error">
+              <span class="error" id="fs-to-error" hidden></span>
+            </div>
+            <div class="fs-cell">
+              <label for="fs-depart">Departure <span class="req" aria-hidden="true">*</span></label>
+              <input class="fs-input" id="fs-depart" name="departDate" type="date" required aria-describedby="fs-depart-error">
+              <span class="error" id="fs-depart-error" hidden></span>
+            </div>
+            <div class="fs-cell" id="fs-return-cell">
+              <label for="fs-return">Return</label>
+              <input class="fs-input" id="fs-return" name="returnDate" type="date" disabled aria-describedby="fs-return-hint fs-return-error">
+              <span class="hint" id="fs-return-hint">Choose Round Trip to add a return date.</span>
+              <span class="error" id="fs-return-error" hidden></span>
+            </div>
+            <div class="fs-cell fs-cell--trav">
+              <label for="fs-trav">Travellers <span class="req" aria-hidden="true">*</span></label>
+              <input class="fs-input" id="fs-trav" name="travellers" type="number" inputmode="numeric" min="1" max="9" step="1" value="1" required aria-describedby="fs-trav-error">
+              <span class="error" id="fs-trav-error" hidden></span>
+            </div>
+            <div class="fs-cell fs-cell--class">
+              <label for="fs-class">Class</label>
+              <select class="fs-input" id="fs-class" name="travelClass">
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fs-foot">
+            <div class="fs-contact">
+              <div class="fs-cell">
+                <label for="fs-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input class="fs-input" id="fs-name" name="name" type="text" required autocomplete="name" aria-describedby="fs-name-error">
+                <span class="error" id="fs-name-error" hidden></span>
+              </div>
+              <div class="fs-cell">
+                <label for="fs-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input class="fs-input" id="fs-email" name="email" type="email" required autocomplete="email" aria-describedby="fs-email-error">
+                <span class="error" id="fs-email-error" hidden></span>
+              </div>
+              <div class="fs-cell">
+                <label for="fs-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input class="fs-input" id="fs-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91" aria-describedby="fs-phone-error">
+                <span class="error" id="fs-phone-error" hidden></span>
+              </div>
+              <div class="fs-cell fs-cell--wide">
+                <label for="fs-message">Message <span class="hint">(optional)</span></label>
+                <input class="fs-input" id="fs-message" name="message" type="text" maxlength="500" placeholder="Other cities, flexible dates or anything else">
+              </div>
+            </div>
+            <div class="fs-actions">
+              <label class="fs-check"><input type="checkbox" name="directFlights" value="Yes"><span>Direct flights</span></label>
+              <button class="btn btn--primary btn--lg fs-submit" type="submit">Send Flight Enquiry</button>
+            </div>
+          </div>
+          <p class="fs-note"><span class="req" aria-hidden="true">*</span> Required. No live fares or availability are shown. Your enquiry is emailed to our team through a third-party form service, so please don&rsquo;t send passport copies or card details.</p>
+          <div class="hp" aria-hidden="true"><label for="fs-honey">Leave this field empty</label><input id="fs-honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+        </form>
       </div>
     </section>
   </main>
