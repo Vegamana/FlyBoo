@@ -9,7 +9,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261028b">
   <link rel="stylesheet" href="assets/css/main.css?v=20261115a">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261115b">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261115d">
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/enquiry.js" defer></script>
   <script src="assets/js/flights.js" defer></script>
@@ -46,7 +46,7 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="page-banner" aria-labelledby="page-title">
+    <section class="page-banner page-banner--band" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="flights.html" aria-current="page">Flights</a></li></ol></nav>
         <h1 id="page-title">Tell us where you&rsquo;re flying.</h1>
@@ -54,7 +54,7 @@
       </div>
     </section>
 
-    <section class="section" id="enquiry" aria-labelledby="fs-title">
+    <section class="section fs-section" id="enquiry" aria-labelledby="fs-title">
       <div class="container">
         <h2 id="fs-title" class="visually-hidden">Flight enquiry</h2>
         <form class="flight-search" id="flights-form" data-enquiry="flights" data-endpoint="https://formsubmit.co/ajax/flyboocs@gmail.com" data-subject="New flight enquiry from FLYBOO.COM" novalidate>
@@ -133,7 +133,7 @@
             </div>
             <div class="fs-actions">
               <label class="fs-check"><input type="checkbox" name="directFlights" value="Yes"><span>Direct flights</span></label>
-              <button class="btn btn--primary btn--lg fs-submit" type="submit">Send Flight Enquiry</button>
+              <button class="btn btn--primary btn--lg fs-submit" type="submit"><span>Send Flight Enquiry</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
           </div>
           <p class="fs-note"><span class="req" aria-hidden="true">*</span> Required. No live fares or availability are shown. Your enquiry is emailed to our team through a third-party form service, so please don&rsquo;t send passport copies or card details.</p>
