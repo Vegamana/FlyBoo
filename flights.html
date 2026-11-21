@@ -9,7 +9,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261028b">
   <link rel="stylesheet" href="assets/css/main.css?v=20261115a">
-  <link rel="stylesheet" href="assets/css/service.css?v=20261115g">
+  <link rel="stylesheet" href="assets/css/service.css?v=20261121a">
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/enquiry.js" defer></script>
   <script src="assets/js/flights.js" defer></script>
@@ -155,7 +155,11 @@
               </div>
             </div>
             <div class="fs-actions">
-              <label class="fs-check"><input type="checkbox" name="directFlights" value="Yes"><span>Direct flights</span></label>
+              <div class="fs-checks" role="group" aria-label="Flight options">
+                <label class="fs-check"><input type="checkbox" name="directFlights" value="Yes"><span>Direct flights</span></label>
+                <label class="fs-check"><input type="checkbox" name="studentFare" value="Yes"><span>Student fare</span></label>
+                <label class="fs-check"><input type="checkbox" name="seniorCitizenFare" value="Yes"><span>Senior citizen fare</span></label>
+              </div>
               <button class="btn btn--primary btn--lg fs-submit" type="submit"><span>Send Flight Enquiry</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
             </div>
           </div>

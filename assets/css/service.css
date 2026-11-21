@@ -80,6 +80,7 @@
 .fs-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-4); }
 .fs-check { display: inline-flex; align-items: center; gap: var(--space-2); min-height: 2.75rem; font-size: var(--font-size-sm); font-weight: 700; color: var(--color-navy); cursor: pointer; }
 .fs-check input { width: 1.125rem; height: 1.125rem; accent-color: var(--color-orange); }
+.fs-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-5); }
 .fs-note { margin: var(--space-4) 0 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 .flight-search .form-message { margin-bottom: var(--space-4); }
 
