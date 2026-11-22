@@ -97,6 +97,7 @@ a:hover { color: var(--color-blue-dark); text-decoration-color: var(--color-oran
 .site-header.is-scrolled { box-shadow: var(--shadow-md); }
 
 .site-header__inner {
+  width: min(calc(100% - 2 * var(--gutter)), 90rem); /* wider than page content, so the logo sits nearer the left edge */
   display: flex;
   flex-wrap: wrap;
   align-items: center;

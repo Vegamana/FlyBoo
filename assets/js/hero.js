@@ -5,6 +5,15 @@
 (function () {
   var root = document.querySelector('.hero-carousel');
   if (!root) return;
+
+  // Size the hero to the screen height below the (sticky) header, so the next section starts below the fold.
+  var header = document.querySelector('.site-header');
+  function setOffset() {
+    if (header) document.documentElement.style.setProperty('--hero-offset', header.offsetHeight + 'px');
+  }
+  setOffset();
+  window.addEventListener('resize', setOffset);
+  window.addEventListener('orientationchange', setOffset);
   var slides = Array.prototype.slice.call(root.querySelectorAll('.hero-slide'));
   if (slides.length < 2) return;
 
