@@ -9,11 +9,12 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/css/tokens.css?v=20261107a">
   <link rel="stylesheet" href="assets/css/main.css?v=20261115a">
-  <link rel="stylesheet" href="assets/css/home.css?v=20261114b">
+  <link rel="stylesheet" href="assets/css/home.css?v=20261122a">
   <link rel="preload" href="assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
   <script src="assets/js/nav.js" defer></script>
   <script src="assets/js/gallery.js" defer></script>
   <script src="assets/js/dest-carousel.js" defer></script>
+  <script src="assets/js/hero.js" defer></script>
   <script src="assets/js/testimonials.js" defer></script>
 </head>
 <body>
@@ -49,10 +50,26 @@
 
   <main id="main" tabindex="-1">
 
-    <!-- A. Hero: full-width photograph. The h1 is visually hidden. -->
+    <!-- A. Hero: auto-advancing slideshow of full-width photographs. The h1 is visually hidden.
+         Controls (dots, pause/play) are added by assets/js/hero.js. Without JavaScript the first photo stays. -->
     <section class="home-hero" aria-labelledby="hero-title">
       <h1 id="hero-title" class="visually-hidden">FLYBOO.COM — Explore the world</h1>
-      <img src="assets/img/home/hero-alhambra-2000.jpg" srcset="assets/img/home/hero-alhambra-1000.jpg 1000w, assets/img/home/hero-alhambra-2000.jpg 2000w" sizes="100vw" width="2000" height="1333" alt="Golden sandstone towers and walls of a Moorish hilltop fortress above dense green trees, with blue mountains beyond" fetchpriority="high" decoding="async">
+      <div class="hero-carousel" role="group" aria-roledescription="carousel" aria-label="Featured destinations">
+        <ul class="hero-track">
+          <li class="hero-slide hero-slide--paris is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <img src="assets/img/home/hero-paris-2000.jpg" srcset="assets/img/home/hero-paris-1000.jpg 1000w, assets/img/home/hero-paris-2000.jpg 2000w" sizes="100vw" width="1999" height="1334" alt="The Eiffel Tower glowing at sunset above the River Seine in Paris, with a tour boat passing a stone bridge" fetchpriority="high" decoding="async">
+          </li>
+          <li class="hero-slide hero-slide--swiss" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+            <img src="assets/img/home/hero-swiss-1200.jpg" width="1200" height="630" alt="Snow-capped Swiss Alps reflected in a still mountain lake on a clear morning" loading="lazy" decoding="async">
+          </li>
+          <li class="hero-slide hero-slide--london" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+            <img src="assets/img/home/hero-london-1000.jpg" width="1000" height="656" alt="Big Ben and the Houses of Parliament beside the River Thames and Westminster Bridge at sunset, London" loading="lazy" decoding="async">
+          </li>
+          <li class="hero-slide hero-slide--japan" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+            <img src="assets/img/home/hero-japan-586.jpg" width="586" height="360" alt="A red multi-tiered pagoda among cherry blossoms with Mount Fuji glowing at sunset behind it, Japan" loading="lazy" decoding="async">
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- C. Service index -->

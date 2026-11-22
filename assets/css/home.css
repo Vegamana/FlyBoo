@@ -4,10 +4,29 @@
    ========================================================================== */
 
 
-/* Hero: the photograph, shown in full ---------------------------------------------- */
+/* Hero: auto-advancing photographs (crossfade) ---------------------------------------- */
 .home-hero { position: relative; background: var(--color-sky); }
-.home-hero img { display: block; width: 100%; height: auto; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; object-position: 55% 40%; }
-@media (min-width: 40em) { .home-hero img { aspect-ratio: 2000 / 924; } }
+.hero-carousel { position: relative; }
+.hero-track { position: relative; list-style: none; margin: 0; padding: 0; overflow: hidden; aspect-ratio: 4 / 3; }
+@media (min-width: 40em) { .hero-track { aspect-ratio: 2000 / 924; } }
+.hero-slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1s ease; }
+.hero-slide.is-active { z-index: 1; opacity: 1; }
+.hero-slide img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 50%; }
+/* Where each photograph is cropped so its subject stays in view */
+.hero-slide--paris img { object-position: 50% 28%; }
+.hero-slide--swiss img { object-position: 50% 35%; }
+.hero-slide--london img { object-position: 60% 25%; }
+.hero-slide--japan img { object-position: 75% 8%; }
+.hero-ctl { position: absolute; z-index: 2; right: var(--gutter); bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-1); padding: 0 var(--space-2); border-radius: 999px; background: rgb(255 255 255 / 88%); box-shadow: var(--shadow-md); }
+.hero-dots { display: flex; }
+.hero-dots__dot { position: relative; width: 1.5rem; height: 2.5rem; padding: 0; border: 0; background: none; cursor: pointer; }
+.hero-dots__dot::after { content: ""; position: absolute; top: 50%; left: 50%; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--color-control-border); transform: translate(-50%, -50%); transition: background 0.2s ease, width 0.2s ease; }
+.hero-dots__dot[aria-current="true"]::after { width: 1.5rem; border-radius: 0.3125rem; background: var(--color-orange); }
+.hero-dots__dot:focus-visible, .hero-ctl__btn:focus-visible { outline: 3px solid var(--color-focus); outline-offset: -2px; }
+.hero-ctl__btn { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--color-navy); cursor: pointer; }
+.hero-ctl__btn:hover { color: var(--color-orange); }
+.hero-ctl__btn svg { width: 1.125rem; height: 1.125rem; }
+@media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } .hero-dots__dot::after { transition: none; } }
 .home-cta :focus-visible { outline-color: var(--color-white); }
 
 /* Section heads -------------------------------------------------------------- */
@@ -120,8 +139,8 @@
 .testi__meta { font-size: var(--font-size-sm); color: var(--color-text-secondary); }
 .testi__dest { margin: var(--space-3) 0 0; font-size: var(--font-size-sm); font-weight: 700; color: var(--color-blue-text); }
 .testi-notice { grid-column: 1; grid-row: 3; margin: 0; font-size: var(--font-size-sm); color: var(--color-text-secondary); }
-.testi-ctl { grid-column: 1 / -1; grid-row: 2; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
-.testi-dots { display: flex; gap: 0; }
+.testi-ctl { grid-column: 1 / -1; grid-row: 2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); }
+.testi-dots { display: flex; flex-wrap: wrap; gap: 0; max-width: 100%; }
 .testi-dots__dot { position: relative; width: 1.75rem; height: 2.75rem; padding: 0; border: 0; background: none; cursor: pointer; }
 .testi-dots__dot::after { content: ""; position: absolute; top: 50%; left: 50%; width: 0.625rem; height: 0.625rem; border-radius: 50%; background: var(--color-control-border); transform: translate(-50%, -50%); transition: background 0.2s ease, width 0.2s ease; }
 .testi-dots__dot[aria-current="true"]::after { width: 1.5rem; border-radius: 0.3125rem; background: var(--color-orange); }
@@ -133,6 +152,7 @@
 .testi-btns__btn svg { width: 1.25rem; height: 1.25rem; }
 @media (max-width: 39.99em) {
   .testi-section { padding-block: var(--space-7); }
+  .testi-dots__dot { width: 1.25rem; }
   .testi-carousel { row-gap: var(--space-4); }
 }
 @media (prefers-reduced-motion: reduce) { .testi__card, .testi__card:hover { transition: none; transform: none; } .testi-dots__dot::after { transition: none; } }
